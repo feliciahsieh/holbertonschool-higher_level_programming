@@ -15,7 +15,7 @@ else:
 
 if last_digit > 5:
     print(text_last_digit, number, text_is, last_digit, text_greater_5)
-elif last_digit < 6 and last_digit > 0:
-    print(text_last_digit, number, text_is, last_digit, text_less_6)
-else:
+elif last_digit == 0:
     print(text_last_digit, number, text_is, last_digit, text_zero)
+else:
+    print(text_last_digit, number, text_is, last_digit, text_less_6)
