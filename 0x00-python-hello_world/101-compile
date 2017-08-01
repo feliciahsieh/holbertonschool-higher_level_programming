@@ -1,4 +1,5 @@
 #!/bin/bash
 python3 -m compileall $PYFILE
-mv __pycache__/main.cpython-34.pyc ./"$PYFILE"c
+export PYNAME=$(echo $PYFILE | cut -f1 -d.)
+mv __pycache__/$PYNAME.cpython-34.pyc   ./"$PYFILE"c
 rmdir __pycache__
