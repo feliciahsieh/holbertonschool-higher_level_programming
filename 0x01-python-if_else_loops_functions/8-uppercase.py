@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+
+
 def uppercase(str):
-    offset = ord('A') - ord('a')
     for i in str:
         if ord(i) >= ord('a') and ord(i) <= ord('z'):
-            print('{}'.format(chr(ord(i) + offset)), end="")
+            offset = ord('A') - ord('a')
         else:
-            print('{}'.format(i), end="")
+            offset = 0
+        print('{}'.format(chr(ord(i) + offset)), end="")
     print("")
