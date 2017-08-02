@@ -5,4 +5,4 @@ for i in range(25, -1, -1):
         offset = ord('A') - ord('a')
     else:
         offset = 0
-    print(chr(i + ord('a') + offset), end="")
+    print('{}'.format(chr(i + ord('a') + offset)), end="")
