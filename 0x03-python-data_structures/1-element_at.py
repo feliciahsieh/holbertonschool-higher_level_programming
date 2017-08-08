@@ -2,7 +2,9 @@
 
 
 def element_at(my_list, idx):
-    if idx >= len(my_list):
+    if type(idx) is str:
+        return None
+    elif idx >= len(my_list):
         return None
     elif idx < 0 and abs(idx) > len(my_list):
         return None
