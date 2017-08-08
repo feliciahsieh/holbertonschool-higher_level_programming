@@ -2,6 +2,8 @@
 
 
 def print_matrix_integer(matrix=[[]]):
+    if len(matrix) == 1:
+        print()
     i = 0
     for row in matrix:
         i = 0
@@ -11,4 +13,3 @@ def print_matrix_integer(matrix=[[]]):
             else:
                 print('{:d}'.format(col), end=" ")
             i = i + 1
-    print()
