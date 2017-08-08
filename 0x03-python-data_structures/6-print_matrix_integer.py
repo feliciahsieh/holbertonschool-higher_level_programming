@@ -2,6 +2,8 @@
 
 
 def print_matrix_integer(matrix=[[]]):
+    if len(matrix) == 0:
+        pass
     if len(matrix) == 1:
         print()
     i = 0
