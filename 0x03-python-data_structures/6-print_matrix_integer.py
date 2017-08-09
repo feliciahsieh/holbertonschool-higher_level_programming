@@ -2,10 +2,15 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-    if len(matrix) == 0 or len(matrix) == 1:
-        print()
+#    if len(matrix) == 0 or len(matrix) == 1:
+#        print()
+#        return
+    if matrix is None or matrix == "":
+       print()
     for row in matrix:
-        if len(row) == 0:
-            print("")
-            continue
-        print(" ".join("{}".format(i) for i in row))
+        for count, elem in enumerate(row):
+            if count < len(row):
+                print('{:d}'.format(elem), end="")
+            else:
+                print('{:d}'.format(elem), end=" ")
+        print()
