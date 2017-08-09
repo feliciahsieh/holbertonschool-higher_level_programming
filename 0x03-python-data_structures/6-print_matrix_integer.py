@@ -6,8 +6,8 @@ def print_matrix_integer(matrix=[[]]):
         print()
     for row in matrix:
         for count, elem in enumerate(row):
-            if count < len(row):
-                print('{:d}'.format(elem), end="")
-            else:
+            if count < (len(row) - 1):
                 print('{:d}'.format(elem), end=" ")
+            else:
+                print('{:d}'.format(elem), end="")
         print()
