@@ -7,7 +7,6 @@ def best_score(my_dict):
     if not my_dict:
         return None
     for key in my_dict:
-        print(key)
         if my_dict[key] > max:
             max = my_dict[key]
             myKey = key
