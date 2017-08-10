@@ -2,7 +2,7 @@
 
 
 def update_dictionary(my_dict, key, value):
-    if key in my_dict:
+    if my_dict and len(key) > 0:
         my_dict[key] = value
 
     return my_dict
