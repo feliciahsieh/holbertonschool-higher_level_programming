@@ -1,20 +1,33 @@
 #include "Python.h"
 
 /**
- * print_python_element - print element info
+ * printElement - print element info
  * @p: python object
+ * @n: number of items in object
  * Return: none
  */
-void print_python_element(PyObject *p)
+void printElement(PyObject *p, int num)
 {
 	char *pyTypes[5] = { "str", "int", "float", "tuple", "list" };
-	int i, num;
+	int i;
+        PyObject *item = NULL;
 
-	p =p;
+	pyTypes[0] = pyTypes[0];
+	item = item;
 
-	num = 3; /*FIX*/
-	for (i = 0; i < num; i++)
-		printf("Element %d: %s\n", i, pyTypes[i]);
+	if (num > 0)
+	{
+		for (i = 0; i < num; i++)
+		{
+/*			printf("Element %d: %s\n", i, pyTypes[i]);*/
+
+			item = PyList_GetItem(p, i);
+/*			PyObject_Print(item, stdout, i);*/
+/*			PyObject_Print(type(item), stdout, i);*/
+			printf("\n");
+		}
+	}
+	printf("\n");
 }
 
 /**
@@ -26,24 +39,14 @@ void print_python_element(PyObject *p)
 void print_python_list_info(PyObject *p)
 {
 	int number = 0, numAllocated = 0;
-	int i;
-	PyListObject *pp;
 
 	if (!p)
 		return;
 
 	number = (int)PyList_Size(p);
 	printf("[*] Size of the Python List = %d\n", number);
+
 	numAllocated = ((PyListObject*)p)->allocated;
 	printf("[*] Allocated = %d\n",numAllocated);
-
-	if (number > 0)
-	{
-		for (i = 0; i < number; i++)
-		{
-			PyObject *item = PyList_GetItem(p, i);
-			PyObject_Print(item, stdout, i);
-			pp=pp;
-		}
-	}
+	printElement(p, number);
 }
