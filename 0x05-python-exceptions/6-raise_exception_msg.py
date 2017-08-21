@@ -1,1 +1,7 @@
-/usr/bin/python3
+#!/usr/bin/python3
+def raise_exception_msg(message=""):
+    try:
+        raise NameError
+    except NameError:
+        print("{}".format(message), end="")
+        raise
