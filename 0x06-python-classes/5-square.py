@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-"""Square class methods and strings.
-
-Some stuff
-
+"""
+Square class methods and strings
 """
 
 import sys
-
 
 class Square:
     """Square methods and vars
@@ -14,17 +11,15 @@ class Square:
     Some more text
 
     Attributes:
-        size: (int): size of Square instance
+        size (int): size of Square instance
 
     """
 
     def __init__(self, size=0):
         """Initialize Square class instance with size and check for Exceptions
 
-        The __init__ method for Square.
-        size must be a positive and valid number.
-
         Args:
+            self (Square): The Square instance
             size (int): size of the side of a Square class
 
         """
@@ -37,19 +32,27 @@ class Square:
             self.__size = size
 
     def area(self):
-        """Calculates the area of a Square instance and check for Exceptions
+        """
+        Calculates the area of a Square instance
 
-        Calc Square area
+        Args:
+            self (Square): square instance
+
+        Returns:
+            area of the square
 
         """
         return self.__size ** 2
 
     def my_print(self):
-        """ Prints a square made up of #'s
+        """
+        Prints a square made up of #'s
 
         Args:
-            None
+            self (Square): The Square instance
 
+        Returns:
+            None
         """
         if self.__size != 0:
             for i in range(self.__size):
@@ -61,12 +64,29 @@ class Square:
 
     @property
     def size(self):
-        """ Getter for size """
+        """
+        Getter for size
+
+        Args:
+            self (Square): The square instance
+
+        Returns:
+            size of square
+        """
         return self.__size
 
     @size.setter
     def size(self, value=0):
-        """ int: size of Square """
+        """
+        Setter for size
+
+        Args:
+            self (Square): The square instance
+            value (int): size of __size var
+
+        Returns:
+            None
+        """
         if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
