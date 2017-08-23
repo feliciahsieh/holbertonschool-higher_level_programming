@@ -1,22 +1,30 @@
 #!/usr/bin/python3
+"""Square class methods and strings.
+
+Some stuff
+
+"""
+
 import sys
 
-
 class Square:
-    """Initialize Square class instance with size
+    """Square methods and vars
+
+    Some more text
 
     Attributes:
-        None:
+        size: (int): size of Square instance
 
     """
 
     def __init__(self, size=0):
         """Initialize Square class instance with size and check for Exceptions
 
-        Size must be a positive and valid number.
+        The __init__ method for Square.
+        size must be a positive and valid number.
 
         Args:
-        size (int): size of the side of a Square class
+            size (int): size of the side of a Square class
 
         """
 
@@ -30,8 +38,7 @@ class Square:
     def area(self):
         """Calculates the area of a Square instance and check for Exceptions
 
-        Args:
-            None
+        Calc Square area
 
         """
         return self.__size ** 2
@@ -58,7 +65,7 @@ class Square:
 
     @size.setter
     def size(self, value=0):
-        """ Setter for size """
+        """ int: size of Square """
         if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
