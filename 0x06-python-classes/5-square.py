@@ -3,9 +3,6 @@
 Square class methods and strings
 """
 
-import sys
-
-
 class Square:
     """Square methods and vars
 
@@ -27,8 +24,7 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = size
 
     def area(self):
         """
@@ -42,24 +38,6 @@ class Square:
 
         """
         return self.__size ** 2
-
-    def my_print(self):
-        """
-        Prints a square made up of #'s
-
-        Args:
-            self (Square): The Square instance
-
-        Returns:
-            None
-        """
-        if self.__size != 0:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    sys.stdout.write('#')
-                sys.stdout.write('\n')
-        else:
-            sys.stdout.write('\n')
 
     @property
     def size(self):
@@ -92,3 +70,21 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    def my_print(self):
+        """
+        Prints a square made up of #'s
+
+        Args:
+            self (Square): The Square instance
+
+        Returns:
+            None
+        """
+        if self.__size != 0:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print('#')
+                print('\n')
+        else:
+            print('\n')

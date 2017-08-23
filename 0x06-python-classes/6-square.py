@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import sys
-
 
 class Square:
     """Initialize Square class instance with size
@@ -48,13 +46,13 @@ class Square:
         """
         if self.__size != 0:
             for y in range(self.__position[1]):
-                sys.stdout.write('\n')
+                print('\n')
             for i in range(self.__size):
                 for x in range(self.__position[0]):
-                    sys.stdout.write(' ')
+                    print(' ')
                 for j in range(self.__size):
-                    sys.stdout.write('#')
-                sys.stdout.write('\n')
+                    print('#')
+                print('\n')
         else:
             sys.stdout.write('\n')
 
