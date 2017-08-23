@@ -5,10 +5,9 @@ Square class methods and strings
 
 import sys
 
+
 class Square:
     """Square methods and vars
-
-    Some more text
 
     Attributes:
         size (int): size of Square instance
