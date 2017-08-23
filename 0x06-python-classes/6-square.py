@@ -25,7 +25,8 @@ class Square:
 
         if type(position) != tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if position[0] >= 0 and position[1] >= 0 and len(position) == 2:
+        if len(position) == 2 and type(position[0]) == int and \
+           position[0] >= 0 and type(position[1]) == int and position[1] >= 0:
             self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -82,7 +83,8 @@ class Square:
         """ Setter for position """
         if type(value) != tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if value[0] >= 0 and value[1] >= 0 and len(value) == 2:
+        if len(position) == 2 and type(position[0]) == int and\
+           position[0] >= 0 and type(position[1]) == int and position[1] >= 0:
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
