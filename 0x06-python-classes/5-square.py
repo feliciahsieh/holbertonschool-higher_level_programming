@@ -4,13 +4,12 @@ import sys
 
 class Square:
     def __init__(self, size=0):
-        try:
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = size
-        except TypeError:
+        if type(size) != int:
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
 
     def area(self):
         return self.__size ** 2
@@ -30,10 +29,9 @@ class Square:
 
     @size.setter
     def size(self, value=0):
-        try:
-            if value < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = value
-        except TypeError:
+        if type(value) != int:
             raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
