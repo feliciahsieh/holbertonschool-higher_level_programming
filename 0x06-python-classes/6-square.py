@@ -47,15 +47,15 @@ class Square:
         """
         if self.__size != 0:
             for y in range(self.__position[1]):
-                print('\n')
+                print()
             for i in range(self.__size):
                 for x in range(self.__position[0]):
-                    print(' ')
+                    print(' ', end="")
                 for j in range(self.__size):
-                    print('#')
-                print('\n')
+                    print('#', end="")
+                print()
         else:
-            sys.stdout.write('\n')
+            print()
 
     @property
     def size(self):
