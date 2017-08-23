@@ -7,6 +7,7 @@ Some stuff
 
 import sys
 
+
 class Square:
     """Square methods and vars
 
