@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Square:
     """Initialize Square class instance with size
 

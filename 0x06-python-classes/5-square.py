@@ -3,6 +3,7 @@
 Square class methods and strings
 """
 
+
 class Square:
     """Square methods and vars
 
@@ -84,7 +85,7 @@ class Square:
         if self.__size != 0:
             for i in range(self.__size):
                 for j in range(self.__size):
-                    print('#')
-                print('\n')
+                    print('#', end="")
+                print()
         else:
-            print('\n')
+            print()
