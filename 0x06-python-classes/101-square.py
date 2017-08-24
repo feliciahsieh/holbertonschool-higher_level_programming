@@ -102,10 +102,10 @@ class Square:
                 a = a + '#' * self.__size
                 if i < self.__size - 1:
                     a = a + '\n'
-        else:
-            a = '\n'
+            return(a)
 
-        return(a)
+        else:
+            return("")
 
     def __repr__(self):
         """ Prints a square made up of #'s
@@ -120,7 +120,6 @@ class Square:
                 a = a + '#' * self.__size
                 if i < self.__size - 1:
                     a = a + '\n'
+            return(a)
         else:
-            a = '\n'
-
-        return(a)
+            return("")
