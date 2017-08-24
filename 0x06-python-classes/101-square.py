@@ -106,3 +106,21 @@ class Square:
             a = a + '\n'
 
         return(a)
+
+    def __repr__(self):
+        """ Prints a square made up of #'s
+        Args:
+            None
+        """
+        a = ""
+        if self.__size != 0:
+            a = a + '\n' * self.__position[1]
+            for i in range(self.__size):
+                a = a + ' ' * self.__position[0]
+                a = a + '#' * self.__size
+                if i < self.__size - 1:
+                    a = a + '\n'
+        else:
+            a = a + '\n'
+
+        return(a)
