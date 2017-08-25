@@ -1,5 +1,17 @@
 #!/usr/bin/python3
+"""
+    Divides each element of a matrix by a divisor
+"""
+
+
 def matrix_divided(matrix, div):
+    """
+    Divides elements of a matrix by a divisor
+
+    Args:
+        matrix (list): matrix of numbers
+        div (int): divisor to divide each matrix element
+    """
     index = 0
     nCol = 0
     if matrix is not None:

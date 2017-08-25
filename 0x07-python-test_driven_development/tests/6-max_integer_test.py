@@ -6,7 +6,10 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """Presence of docstrings"""
+    """Presence of docstrings
+    Args:
+        None
+    """
     def test_presence_of_module_docstring(self):
         module_doc = __import__('6-max_integer').__doc__
         self.assertTrue(len(module_doc) > 1)
