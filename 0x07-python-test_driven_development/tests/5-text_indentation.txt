@@ -1,0 +1,24 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``prints text with 2 new lines after a period, question mark, colon char``
+-------------------
+
+This is an example text file in reStructuredText format. First import
+``def text_indentation(text)`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+"""Working scenarios"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong number of arguments"""
+
+
+"""Test: Check wrong number of arguments and wrong type"""

@@ -1,0 +1,24 @@
+The ``4-print_square`` module
+======================
+
+Using ``prints a square with the character #``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``def print_square`` from the ``4-print_square`` module:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+"""Working scenarios"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong number of arguments"""
+
+
+"""Test: Check wrong number of arguments and wrong type"""
