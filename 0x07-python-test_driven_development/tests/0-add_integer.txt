@@ -9,7 +9,7 @@ This is an example text file in reStructuredText format.  First import
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
-"""Working scenarios"""
+"""Test: Working scenarios"""
     >>> print(add_integer(0, 0))
     0
 
@@ -142,6 +142,10 @@ This is an example text file in reStructuredText format.  First import
     TypeError: a must be an integer
 
 """Test: Check wrong number of arguments"""
+    >>> print(add_integer(50))
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'b'
 
     >>> print(add_integer(-1, -2, -3))
     Traceback (most recent call last):
@@ -179,3 +183,26 @@ This is an example text file in reStructuredText format.  First import
     Traceback (most recent call last):
         ...
     TypeError: add_integer() takes 2 positional arguments but 3 were given
+
+    >>> print(add_integer(4.33, 7,  ))
+    11
+
+    >>> print(add_integer(None, 6.7))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer( , ))
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> print(add_integer(9, 14, , ,))
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> print(add_integer(98, (3.77,)))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
