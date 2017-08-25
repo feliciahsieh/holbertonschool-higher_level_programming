@@ -1,0 +1,24 @@
+The ``matrix_divided(matrix, div)`` module
+======================
+
+Using ``division of a matrix by a number``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+"""Working scenarios"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong number of arguments"""
+
+
+"""Test: Check wrong number of arguments and wrong type"""

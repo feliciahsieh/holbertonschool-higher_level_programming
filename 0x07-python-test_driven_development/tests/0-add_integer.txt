@@ -1,11 +1,11 @@
-The ``add_integer(a, b)`` module
+The ``0-add_integer(a, b)`` module
 ======================
 
 Using ``addition with 2 integers``
 -------------------
 
 This is an example text file in reStructuredText format.  First import
-``factorial`` from the ``example`` module:
+``add_integer`` from the ``0-add_integer`` module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 

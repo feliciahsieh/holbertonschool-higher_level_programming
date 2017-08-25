@@ -1,0 +1,24 @@
+The ``3-say_my_name(first_name, last_name)`` module
+======================
+
+Using ``Print My name is first_name last_name``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+"""Working scenarios"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong types"""
+
+
+"""Test: Check wrong number of arguments"""
+
+
+"""Test: Check wrong number of arguments and wrong type"""
