@@ -14,15 +14,17 @@ def matrix_divided(matrix, div):
     """
     index = 0
     nCol = 0
+    if matrix == []:
+        return []
     if matrix is not None:
         nCol = len(matrix[0])
     for i in matrix:
         if len(matrix[index]) != nCol:
             raise TypeError("Each row of the matrix must have the same size")
         for j in i:
-            if type(j) is not int and type(i) is not float:
+            if type(j) is not int and type(j) is not float:
                 raise TypeError("matrix must be a matrix (list of lists)\
-                of integers/floats")
+ of integers/floats")
         index += 1
 
     if type(div) is not int and type(div) is not float:

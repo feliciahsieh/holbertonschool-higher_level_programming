@@ -1,5 +1,20 @@
 #!/usr/bin/python3
+"""
+    text_indentation: print 2 newlines instead of every period,
+        question mark, or colon character.
+"""
+
+
 def text_indentation(text):
+    """
+    print 2 newlines instead of every period,
+        question mark, or colon character.
+
+    Args:
+        text (str): string of text to format
+
+    """
+
     if type(text) is not str:
         raise TypeError("text must be a string")
     isSkip = False
