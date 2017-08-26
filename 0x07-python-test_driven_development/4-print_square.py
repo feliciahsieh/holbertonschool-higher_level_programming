@@ -13,20 +13,18 @@ def print_square(size):
 
     """
 
-    if type(size) is float and size < 0.0:
+    if isinstance(size, float):
         raise TypeError("size must be an integer")
 
-    if size == None or type(size) is str or type(size) is tuple:
+    if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    if type(size) is float:
-        raise TypeError("size must be an integer")
-    if type(size) is not int:
-        if size < 0 or size < 0.0:
-            raise ValueError("size must be >= 0")
-        else:
+    if type(size) == float:
+        if size < 0:
             raise TypeError("size must be an integer")
+        else:
+            raise ValueError("size must be >= 0")
 
     for i in range(size):
         print("#" * int(size))

@@ -14,12 +14,12 @@ def text_indentation(text):
         text (str): string of text to format
 
     """
-
-    if type(text) is not str:
+    if text == None:
+        raise TypeError("missing 1 required positional argument")
+    if type(text) != str:
         raise TypeError("text must be a string")
     isSkip = False
     for i in text:
-
         if i == '.' or i == '?' or i == ':':
             print(i, '\n' * 2, end="", sep="")
             isSkip = True
