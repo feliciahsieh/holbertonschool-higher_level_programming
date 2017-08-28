@@ -101,6 +101,12 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.width, self. height)
 
     def __del__(self):
+        """
+        __del__ - deletes instance of Rectangle instance
+
+        Args:
+            None
+        """
         print("Bye rectangle...")
 
 #if __name__ == "__main__":
