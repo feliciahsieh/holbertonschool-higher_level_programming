@@ -12,14 +12,19 @@ def add_integer(a, b):
     b (int): second operand
     """
 
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    elif type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    #Check for Infinite number
     if a == float('inf') or a == -float('inf'):
         return float('inf')
     if b == float('inf') or b == -float('inf'):
         return float('inf')
+    #Check for NaN
+    if a != a or b != b:
+        return float('nan')
+
+    if type(a) is not int and type(a) is not float:
+        raise TypeError("a must be an integer")
+    elif type(b) is not int and type(b) is not float:
+        raise TypeError("b must be an integer")
 
     return(int(a) + int(b))
 
