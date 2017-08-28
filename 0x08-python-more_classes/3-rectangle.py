@@ -83,10 +83,12 @@ class Rectangle:
         Args:
             None
         """
+
         if self.width == 0 or self.height == 0:
             return ""
-        rect = ("#" * self.width) + "\n"
-        rect = rect * self.height
+        rect = ("#" * self.width)
+        rect = (rect + "\n") * (self.height - 1) + rect
+
         return rect
 
 #if __name__ == "__main__":
