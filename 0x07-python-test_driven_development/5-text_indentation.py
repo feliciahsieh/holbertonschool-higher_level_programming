@@ -14,7 +14,7 @@ def text_indentation(text):
         text (str): string of text to format
 
     """
-    if text == None:
+    if text is None:
         raise TypeError("missing 1 required positional argument")
     if type(text) != str:
         raise TypeError("text must be a string")

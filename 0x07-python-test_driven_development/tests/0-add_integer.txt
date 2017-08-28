@@ -206,3 +206,11 @@ This is an example text file in reStructuredText format.  First import
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
+Test infinite numbers
+    >>> print(add_integer(float('inf'), 3))
+    inf
+
+Test NaN
+    >>> print(add_integer(float('nan'), 5))
+    nan
