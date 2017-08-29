@@ -139,24 +139,9 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        if rect_1 >= rect_2:
+        if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
 
-    def __eq__(self, other):
-        return self.area() == other.area()
-
-    def __ne__(self, other):
-        return self.area() != other.area()
-
-    def __gt__(self, other):
-        return self.area() > other.area()
-
-    def __lt__(self, other):
-        return self.area() < other.area()
-
     def __ge__(self, other):
         return self.area() >= other.area()
-
-    def __le__(self, other):
-        return self.area() <= other.area()
