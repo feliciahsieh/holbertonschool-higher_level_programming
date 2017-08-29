@@ -8,7 +8,12 @@ class Rectangle:
     """ Define Rectangle class
 
     Args:
+        width (int): width of the Rectangle
+        height (int): height of the Rectangle
+
+    Class variables:
         number_of_instances (int): count of number of instances
+        print_symbol (string): single character to use to print the Rectangle
 
     """
 
@@ -16,26 +21,36 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """ Initialize Rectangle instance
+        """
+        Initialize Rectangle instance
+
         Args:
             width (int): width of Rectangle
             height (int): height of Rectangle
+
         """
-        __dict__ = {}
         Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        # Getter
+        """
+
+        Getter for width
+
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Set width of Rectangle instance
+        """
+
+        Set width of Rectangle instance
+
         Args:
             value (int): desired value of width of Rectangle
+
         """
 
         if type(value) is not int:
@@ -47,14 +62,22 @@ class Rectangle:
 
     @property
     def height(self):
-        # Getter
+        """
+
+        Getter for height
+
+        """
+
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Set height of Rectangle instance
+        """
+        Set height of Rectangle instance
+
         Args:
             value (int): desired value of height of Rectangle
+
         """
 
         if type(value) is not int:
@@ -89,6 +112,7 @@ class Rectangle:
     def area(self):
         """
         area - Returns the area of the Rectangle instance
+
         Args:
             None
         """
@@ -111,6 +135,7 @@ class Rectangle:
         Args:
             None
         """
+
         if self.width == 0 or self.height == 0:
             return ""
         rect = str(self.print_symbol) * self.width
@@ -124,8 +149,8 @@ class Rectangle:
         Args:
             None
         """
-        if self.width == 0 or self.height == 0:
-            return {}
+        self.width = width
+        self.height = height
         return "Rectangle({}, {})".format(self.width, self. height)
 
     def __del__(self):
