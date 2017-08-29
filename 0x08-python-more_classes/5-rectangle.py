@@ -109,6 +109,3 @@ class Rectangle:
             None
         """
         print("Bye rectangle...")
-
-#if __name__ == "__main__":
-#    from 0-rectangle import Rectangle

@@ -116,6 +116,3 @@ class Rectangle:
 
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-#if __name__ == "__main__":
-#    from 0-rectangle import Rectangle

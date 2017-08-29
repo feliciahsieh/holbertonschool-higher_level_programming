@@ -58,6 +58,3 @@ class Rectangle:
             raise ValueError("height must be >=0")
         else:
             self.__height = value
-
-#if __name__ == "__main__":
-#    from 0-rectangle import Rectangle

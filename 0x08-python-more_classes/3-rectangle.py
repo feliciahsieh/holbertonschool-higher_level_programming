@@ -91,6 +91,3 @@ class Rectangle:
         rect = (rect + "\n") * (self.height - 1) + rect
 
         return rect
-
-#if __name__ == "__main__":
-#    from 0-rectangle import Rectangle

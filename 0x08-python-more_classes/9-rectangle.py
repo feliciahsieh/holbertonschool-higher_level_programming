@@ -158,6 +158,3 @@ class Rectangle:
 
     def __le__(self, other):
         return self.area() <= other.area()
-
-#if __name__ == "__main__":
-#    from 0-rectangle import Rectangle
