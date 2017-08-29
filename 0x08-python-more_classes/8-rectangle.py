@@ -68,35 +68,13 @@ class Rectangle:
         else:
             self.__height = value
 
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """
-        bigger_or_equal - Returns the largest Rectangle by area
-
-        Args:
-            rect_1 (Rectangle): first Rectangle
-            rect_2 (Rectangle): second Rectangle
-
-        Return:
-            The bigger Rectangle by area
-        """
-
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-
-        if rect_1 >= rect_2:
-            return rect_1
-        return rect_2
-
     def area(self):
         """
         area - Returns the area of the Rectangle instance
         Args:
             None
         """
-        return self.height * self.width
+        return self.__height * self.__width
 
     def perimeter(self):
         """
@@ -142,6 +120,28 @@ class Rectangle:
 
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        bigger_or_equal - Returns the largest Rectangle by area
+
+        Args:
+            rect_1 (Rectangle): first Rectangle
+            rect_2 (Rectangle): second Rectangle
+
+        Return:
+            The bigger Rectangle by area
+        """
+
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1 >= rect_2:
+            return rect_1
+        return rect_2
 
     def __eq__(self, other):
         return self.area() == other.area()
