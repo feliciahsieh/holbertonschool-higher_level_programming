@@ -124,9 +124,9 @@ class Rectangle:
         Args:
             None
         """
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.height + self.width)
+        return 2 * (self.__height + self.__width)
 
     def __str__(self):
         """
@@ -136,11 +136,11 @@ class Rectangle:
             None
         """
 
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         rect = ""
-        rect = str(self.print_symbol) * self.width
-        rect = (rect + "\n") * (self.height - 1) + rect
+        rect = str(self.print_symbol) * self.__width
+        rect = (rect + "\n") * (self.__height - 1) + rect
         return rect
 
     def __repr__(self):
@@ -150,9 +150,9 @@ class Rectangle:
         Args:
             None
         """
-        width = self.__width
-        height = self.__height
-        return "Rectangle({}, {})".format(self.width, self. height)
+        w = self.__width
+        h = self.__height
+        return "Rectangle({}, {})".format(w, h)
 
     def __del__(self):
         """
