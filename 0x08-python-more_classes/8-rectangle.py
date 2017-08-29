@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-    define class Rectangle
+Define class Rectangle
 """
 
 
 class Rectangle:
-    """ Define Rectangle class
+    """
+    Define Rectangle class
 
     Args:
         width (int): width of the Rectangle
@@ -82,10 +83,9 @@ class Rectangle:
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -105,7 +105,7 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        if rect_1.area() >= rect_2.area():
+        if rect_1 >= rect_2:
             return rect_1
         return rect_2
 
@@ -138,6 +138,7 @@ class Rectangle:
 
         if self.width == 0 or self.height == 0:
             return ""
+        rect = ""
         rect = str(self.print_symbol) * self.width
         rect = (rect + "\n") * (self.height - 1) + rect
         return rect
@@ -149,8 +150,8 @@ class Rectangle:
         Args:
             None
         """
-        self.width = width
-        self.height = height
+        width = self.__width
+        height = self.__height
         return "Rectangle({}, {})".format(self.width, self. height)
 
     def __del__(self):
