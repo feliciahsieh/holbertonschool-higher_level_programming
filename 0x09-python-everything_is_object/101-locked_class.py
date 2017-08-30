@@ -3,4 +3,5 @@ class LockedClass:
     __slots__ = ['first_name']
 
     def __init__(self, name):
-        self.first_name = name
+        if type(name) is str:
+            self.first_name = name
