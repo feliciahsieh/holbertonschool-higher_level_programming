@@ -1,7 +1,7 @@
-1-my_list.txt module
+0x0A-python-inheritance/1-my_list.txt module
 ====================
 
-Importing the function from the module:
+Importing the class from the module:
 	 >>> MyList = __import__("1-my_list").MyList
 
 Checking for module docstring:
