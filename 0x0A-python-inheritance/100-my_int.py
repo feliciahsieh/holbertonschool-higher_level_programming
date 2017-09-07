@@ -13,9 +13,7 @@ class MyInt(int):
         Return:
             True if Not_Equal to
         """
-        if self != other:
-            return True
-        return False
+        return int(self) != int(other)
 
     def __ne__(self, other):
         """
@@ -25,6 +23,4 @@ class MyInt(int):
         Return:
             True if Equal to
         """
-        if self == other:
-            return True
-        return False
+        return int(self) == int(other)
