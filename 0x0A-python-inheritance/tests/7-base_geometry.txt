@@ -29,7 +29,7 @@ Checking for integer_validator method docstring
         >>> len(f) > 1
         True
 
-Checking given test case
+Checking given test cases
 	>>> bg = BaseGeometry()
 
 	>>> bg.integer_validator("my_int", 12)
@@ -53,16 +53,36 @@ Checking given test case
 		  ...
 	ValueError: distance must be greater than 0
 
-Checking empty object
+Checking integer_validator with float
+	>>> bg.integer_validator("year", 2017.9)
+	Traceback (most recent call last):
+		  ...
+	TypeError: year must be an integer
 
+Checking integer_validator with tuple
+	>>> bg.integer_validator("tup", (8, 9))
+	Traceback (most recent call last):
+		  ...
+	TypeError: tup must be an integer
 
-Checking negative values
+Checking integer_validator with list
+	>>> bg.integer_validator("box", [3, 2])
+	Traceback (most recent call last):
+		  ...
+	TypeError: box must be an integer
 
+Checking integer_validator with None object
+	>>> bg.integer_validator("None", None)
+	False
 
-Checking NULL object
+Checking integer_validator with NaN object
+	>>> bg.integer_validator("Nan", NaN)
+	Traceback (most recent call last):
+		  ...
+	NameError: name 'NaN' is not defined
 
-
-Checking NaN object
-
-
-Checking None object
+Checking integer_validator with infinity object
+	>>> bg.integer_validator("infinity", float('inf'))
+	Traceback (most recent call last):
+		  ...
+	TypeError: infinity must be an integer
