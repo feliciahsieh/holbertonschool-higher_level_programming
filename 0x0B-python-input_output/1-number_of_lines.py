@@ -9,7 +9,7 @@ def number_of_lines(filename=""):
     """
 
     if type(filename) is not str:
-        return
+        return 0
 
     with open(filename, mode="r") as f:
         for i, l in enumerate(f):
