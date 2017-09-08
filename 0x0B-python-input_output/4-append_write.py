@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+4-append_write.py / append_write
+"""
 
 
 def append_write(filename="", text=""):
@@ -11,11 +14,11 @@ def append_write(filename="", text=""):
         the number of characters added:
     """
     if type(filename) is not str or type(text) is not str:
-        return
+        return 0
 
     try:
         with open(filename, mode="a", encoding="UTF8") as f:
             count = f.write(text)
             return count
     except IOError as e:
-        raise IOError("Unable to open file")
+        return 0
