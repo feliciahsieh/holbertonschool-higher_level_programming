@@ -7,9 +7,10 @@ def number_of_lines(filename=""):
     Returns:
         number of lines in the file
     """
+    i = 0
 
     if type(filename) is not str:
-        return 0
+        raise TypeError("filename is not a string")
 
     with open(filename, mode="r") as f:
         for i, l in enumerate(f):
