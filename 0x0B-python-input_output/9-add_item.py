@@ -6,10 +6,22 @@ save_to_json_file from 7-save_to_json_file.py and
 load_from_json_file from 8-load_from_json_file.py
 """
 
+import sys
 import json
 
-with open("7-save_to_jason_file.py", "r") as f7:
 
-with open("8-load_from_json_file.py", "r") as j8:
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+fname = "add_item.json"
 
-with open("add_item.json", "w") as f:
+with open('add_item.json', 'a+') as f:
+    pass
+
+listObj = []
+listObj = load_from_json_file(fname)
+
+#print(listObj)
+#for i in range(1, len(sys.argv)):
+#    listObj.append(sys.argv[i])
+
+#save_to_json_file(listObj, fname)
