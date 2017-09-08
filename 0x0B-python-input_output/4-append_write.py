@@ -18,9 +18,6 @@ def append_write(filename="", text=""):
     if type(filename) is not str or type(text) is not str:
         return 0
 
-    try:
-        with open(filename, mode="a", encoding="UTF8") as f:
-            count = f.write(text)
-            return count
-    except IOError as e:
-        return 0
+    with open(filename, mode="a", encoding="utf-8") as f:
+        count = f.write(text)
+        return count
