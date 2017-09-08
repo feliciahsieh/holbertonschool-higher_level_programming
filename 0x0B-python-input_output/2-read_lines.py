@@ -10,10 +10,11 @@ def read_lines(filename="", nb_lines=0):
         return
 
     listText = []
+    nLines = 0
     with open(filename, mode="r") as f:
-        for nLines, l in enumerate(f):
+        for l in f:
             listText.append(l)
-    nLines + 1
+            nLines += 1
 
     if nb_lines <= 0 or nb_lines >= nLines:
         for i in range(nLines):
