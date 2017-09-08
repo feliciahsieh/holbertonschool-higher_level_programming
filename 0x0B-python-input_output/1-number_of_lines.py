@@ -14,4 +14,6 @@ def number_of_lines(filename=""):
     with open(filename, mode="r") as f:
         for i, l in enumerate(f):
             pass
+    f.close()
+
     return i + 1
