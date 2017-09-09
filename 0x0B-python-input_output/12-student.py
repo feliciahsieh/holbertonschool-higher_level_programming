@@ -41,5 +41,6 @@ class Student:
                         d[k] = self.__dict__[k]
         else:
             for k in self.__dict__.keys():
-                d = self.__dict__
+                if type(k) == str:
+                    d[k] = self.__dict__[k]
         return d
