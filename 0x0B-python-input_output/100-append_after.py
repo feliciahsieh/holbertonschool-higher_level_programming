@@ -12,6 +12,9 @@ def append_after(filename="", search_string="", new_string=""):
     """
     if filename is None or search_string == "" or new_string == "":
         return
+    if filename != str or search_string != str or new_string != str:
+        return
+
     with open(filename, "r") as f:
         contents = f.readlines()
 
