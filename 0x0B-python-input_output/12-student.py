@@ -35,7 +35,6 @@ class Student:
 
         if attrs is not None:
             for k in self.__dict__.keys():
-                #print("key", k, "value", self.__dict__[k])
                 for a in range(len(attrs)):
                     if attrs[a] == k:
                         d[k] = self.__dict__[k]
