@@ -10,6 +10,8 @@ def append_after(filename="", search_string="", new_string=""):
     Return:
         None (Change file to reflect changes)
     """
+    if filename is None or search_string == "" or new_string=="":
+        return
     with open(filename, "r") as f:
         contents = f.readlines()
 
