@@ -115,3 +115,12 @@ class Rectangle(Base):
         """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, Base.__x, Base.__y, self.width, self.height))
+
+    def update(self, *args):
+        l = ["id", "width", "height", "x", "y"]
+        d = {}
+        index = 0
+        for arg in args:
+            d[l[index]] = arg
+            index += 1
+        self.__dict__.update(d)
