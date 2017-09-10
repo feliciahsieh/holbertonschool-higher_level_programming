@@ -75,7 +75,7 @@ class Rectangle(Base):
     @__y.setter
     def __y(self, y):
         """ Setter for __y """
-        if type(y) != int and y != None:
+        if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
@@ -103,3 +103,15 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """
+        ___str__ - overload the ___str___ method with the format:
+[Rectangle] (<id>) <x>/<y> - <width>/<height>
+        Args:
+            None
+        Return:
+            None
+        """
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, Base.__x, Base.__y, self.width, self.height))
