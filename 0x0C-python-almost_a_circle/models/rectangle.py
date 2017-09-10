@@ -15,6 +15,7 @@ class Rectangle(Base):
         Result:
             None
         """
+
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -55,13 +56,13 @@ class Rectangle(Base):
         return self.x
 
     @__x.setter
-    def __x(self, value):
-        """ Setter for __y """
-        if type(value) != int:
+    def __x(self, x):
+        """ Setter for __x """
+        if type(x) != int:
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if x < 0:
             raise ValueError("x must be >= 0")
-        self.x = value
+        Base.__x = x
 
     @property
     def __y(self):
@@ -69,10 +70,20 @@ class Rectangle(Base):
         return self.y
 
     @__y.setter
-    def __y(self, value):
+    def __y(self, y):
         """ Setter for __y """
-        if type(value) != int:
+        if type(y) != int and y != None:
             raise TypeError("y must be an integer")
-        if value <= 0:
+        if y < 0:
             raise ValueError("y must be >= 0")
-        self.y = value
+        Base.__y = y
+
+    def area(self):
+        """
+        area - calculates the area of a Rectangle
+        Args:
+            None
+        Return:
+            None
+        """
+        return self.width * self.height
