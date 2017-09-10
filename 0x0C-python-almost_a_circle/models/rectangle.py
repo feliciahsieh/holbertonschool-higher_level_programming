@@ -3,6 +3,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    class Rectangle definition
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -87,3 +90,16 @@ class Rectangle(Base):
             None
         """
         return self.width * self.height
+
+    def display(self):
+        """
+        display - prints the Rectangle to the screen using a character
+        Args:
+            None
+        Return:
+            None
+        """
+        for i in range(self.height):
+            for j in range(self.width):
+                print("#", end="")
+            print()
