@@ -1,14 +1,11 @@
 #!/usr/bin/python3
+""" square.py """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """
     class Square definition
-    Methods:
-        __init__()
-        __str__()
-        __size()
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -23,12 +20,11 @@ class Square(Rectangle):
             None
         """
         super().__init__(size, size, x, y, id)
-        self.__size = size
 
     @property
     def size(self):
-        """ Getter for size """
-        return self.__size
+        """ Getter for size (which is really width)"""
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -43,9 +39,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.width = value
+        self.width = value #also value of size
         self.height = value
-        self.__size = value
 
     def __str__(self):
         """
@@ -57,3 +52,31 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        update - assigns attributes to Square
+        Args:
+            args - attributes as a series of arguments
+            kwargs - attributes as a dictionary
+        Return:
+            None
+        """
+        kd = {}
+        for key, value in kwargs.items():
+            kd[key] = value
+        if "size" in kwargs:
+            kd['height'] = kd['size']
+            kd['width'] = kd['size']
+        self.__dict__.update(kd)
+
+        l = ["id", "size", "x", "y"]
+        d = {}
+        index = 0
+        for arg in args:
+            d[l[index]] = arg
+            index += 1
+        if len(args) >= 2:
+            d['height'] = d['size']
+            d['width'] = d['size']
+        self.__dict__.update(d)
