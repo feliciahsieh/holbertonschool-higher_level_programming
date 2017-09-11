@@ -59,13 +59,13 @@ class Rectangle(Base):
         return self.x
 
     @__x.setter
-    def __x(self, x):
+    def __x(self, value):
         """ Setter for __x """
-        if type(x) != int:
+        if type(value) != int:
             raise TypeError("x must be an integer")
-        if x < 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
-        Base.__x = x
+        self.x = value
 
     @property
     def __y(self):
@@ -73,13 +73,13 @@ class Rectangle(Base):
         return self.y
 
     @__y.setter
-    def __y(self, y):
+    def __y(self, value):
         """ Setter for __y """
-        if type(y) != int:
+        if type(value) != int:
             raise TypeError("y must be an integer")
-        if y < 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
-        Base.__y = y
+        self.y = value
 
     def area(self):
         """
@@ -99,10 +99,10 @@ class Rectangle(Base):
         Return:
             None
         """
-        for i in range(Base.__y):
+        for i in range(self.y):
             print()
         for i in range(self.height):
-            print(" "*self.width,"#"*self.width,"\n", end="", sep="")
+            print(" " * self.x, "#" * self.width, "\n", end="", sep="")
 
     def __str__(self):
         """
@@ -114,7 +114,7 @@ class Rectangle(Base):
             None
         """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, Base.__x, Base.__y, self.width, self.height))
+            self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args):
         l = ["id", "width", "height", "x", "y"]
