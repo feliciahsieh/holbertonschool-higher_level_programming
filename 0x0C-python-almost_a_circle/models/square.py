@@ -39,8 +39,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.width = value  # also value of size
-        self.height = value
+        self.width = value   # also value of size
+        self.height = value  # also value of size
 
     def __str__(self):
         """
@@ -62,21 +62,35 @@ class Square(Rectangle):
         Return:
             None
         """
-        kd = {}
-        for key, value in kwargs.items():
-            kd[key] = value
-        if "size" in kwargs:
-            kd['height'] = kd['size']
-            kd['width'] = kd['size']
-        self.__dict__.update(kd)
+        if len(args) > 0:
+            l = ["id", "size", "x", "y"]
+            d = {}
+            index = 0
+            for arg in args:
+                d[l[index]] = arg
+                index += 1
+                self.__dict__.update(d)
+        else:
+            kd = {}
+            for key, value in kwargs.items():
+                kd[key] = value
+                if key == "size":  #manually update value
+                    self.width = value
+                    self.height = value
+                self.__dict__.update(kd)
 
-        l = ["id", "size", "x", "y"]
+    def to_dictionary(self):
+        """
+        to_dictionary - return the dictionary representation of a Square
+        Args:
+            None
+        Return:
+            custom dictionary of Square
+        """
         d = {}
-        index = 0
-        for arg in args:
-            d[l[index]] = arg
-            index += 1
-        if len(args) >= 2:
-            d['height'] = d['size']
-            d['width'] = d['size']
-        self.__dict__.update(d)
+        d["id"] = self.id
+        d["size"] = self.width
+        d["x"] = self.x
+        d["y"] = self.y
+
+        return d
