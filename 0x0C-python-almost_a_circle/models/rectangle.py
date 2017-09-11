@@ -117,18 +117,27 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
-        kd = {}
-        for key, value in kwargs.items():
-            kd[key] = value
-        self.__dict__.update(kd)
-
-        l = ["id", "width", "height", "x", "y"]
-        d = {}
-        index = 0
-        for arg in args:
-            d[l[index]] = arg
-            index += 1
-        self.__dict__.update(d)
+        """
+        update - update Rectangle instance with variatic attributes
+        Args:
+            args(unk) - random ordered list of attributes
+            kwargs(unk) - random dictionary attributes
+        Return:
+            None
+        """
+        if len(args) > 0:
+            l = ["id", "width", "height", "x", "y"]
+            d = {}
+            index = 0
+            for arg in args:
+                d[l[index]] = arg
+                index += 1
+                self.__dict__.update(d)
+        else:
+            kd = {}
+            for key, value in kwargs.items():
+                kd[key] = value
+                self.__dict__.update(kd)
 
     def to_dictionary(self):
         """
