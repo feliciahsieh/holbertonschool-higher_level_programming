@@ -129,3 +129,13 @@ class Rectangle(Base):
             d[l[index]] = arg
             index += 1
         self.__dict__.update(d)
+
+    def to_dictionary(self):
+        """
+        to_dictionary - return the dictionary representation of a Rectangle
+        Args:
+            None
+        Return:
+            None
+        """
+        return self.__dict__
