@@ -72,3 +72,32 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        create - returns an instance with all attributes already set
+        Args:
+            cls (class) - class of method
+            dictionary(dict) - double pointer to a dictionary
+        Result:
+            An instance with all attributes
+        """
+
+        #print(isinstance(cls, Rectangle))
+        print("my name is", cls.__name__)
+        print(isinstance(cls.__name__, Square))
+        #print(issubclass(type(cls), Rectangle))
+
+        # rc = Rectangle(dictionary["width"], dictionary["height"],
+        # dictionary["x"], dictioanry["y"])
+        # def __init__(self, width, height, x=0, y=0, id=None):
+
+        # sq = Square(d["size"], d["x"], d["y"])
+        # def __init__(self, size, x=0, y=0, id=None)
+
+        # cls.__name__.update(rc)
+
+        re = Rectangle(5, 5, 0, 0)
+        return(rc)
+f

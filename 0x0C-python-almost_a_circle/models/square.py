@@ -74,7 +74,7 @@ class Square(Rectangle):
             kd = {}
             for key, value in kwargs.items():
                 kd[key] = value
-                if key == "size":  #manually update value
+                if key == "size":  # manually update value
                     self.width = value
                     self.height = value
                 self.__dict__.update(kd)
