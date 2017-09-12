@@ -58,3 +58,24 @@ class Base:
         s = Base.to_json_string(l)
         with open(str(cls.__name__) + ".json", "w+") as f:
             f.write(str(s))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from_json_string - returns the list of the JSON string
+        Args:
+            json_string(str) - string of list of dictionaries
+        Return:
+            Empty list if no JSON string or a list created from json_string
+        """
+        if json_string is None or json_string == "":
+            return []
+
+        print("json_string", json_string)
+
+        d = json.loads(json_string)
+        print("d", d)
+        #for myList in d:
+        #    for key, value in myList.iteritems():
+        #        print(key, value)
+        return d
