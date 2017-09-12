@@ -131,18 +131,28 @@ class Rectangle(Base):
             None
         """
         if len(args) > 0:
-            l = ["id", "width", "height", "x", "y"]
-            d = {}
-            index = 0
-            for arg in args:
-                d[l[index]] = arg
-                index += 1
-                self.__dict__.update(d)
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.width = arg
+                if i == 2:
+                    self.height = arg
+                if i == 3:
+                    self.x = arg
+                if i == 4:
+                    self.y = arg
         else:
-            kd = {}
-            for key, value in kwargs.items():
-                kd[key] = value
-                self.__dict__.update(kd)
+            if 'id' in kwargs:
+                self.id = kwargs.get("id")
+            if 'width' in kwargs:
+                self.width = kwargs.get("width")
+            if 'height' in kwargs:
+                self.height = kwargs.get("height")
+            if 'x' in kwargs:
+                self.x = kwargs.get("x")
+            if 'y' in kwargs:
+                self.y = kwargs.get("y")
 
     def to_dictionary(self):
         """
