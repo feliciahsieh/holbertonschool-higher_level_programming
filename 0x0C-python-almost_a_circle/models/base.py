@@ -51,19 +51,10 @@ class Base:
             None
         """
 
-        #a = {}
-
-        fs = ""
+        d = {}
         l = []
-        i = 0
         for obj in list_objs:
-            s = Base.to_json_string(obj.to_dictionary())
-            if (i != 0):
-                fs = fs + ", " + s
-            else:
-                fs = "[" + s
-                i = 1
-            print(fs)
-        fs = fs + "]"
+            l.append(obj.to_dictionary())
+        s = Base.to_json_string(l)
         with open(str(cls.__name__) + ".json", "w+") as f:
-            f.write(str(fs))
+            f.write(str(s))
