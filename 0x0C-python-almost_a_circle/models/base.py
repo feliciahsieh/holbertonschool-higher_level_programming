@@ -93,3 +93,16 @@ class Base:
         obj.update(**dictionary)
 
         return(obj)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        fn = str(cls.__name__) + ".json"
+        import os.path
+        if not os.path.isfile(fn):
+            return []
+        with open(fn, "r") as f:
+            from_json_string
+
+            obj.create
+        """
