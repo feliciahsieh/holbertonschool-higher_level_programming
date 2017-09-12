@@ -63,21 +63,26 @@ class Square(Rectangle):
             None
         """
         if len(args) > 0:
-            l = ["id", "size", "x", "y"]
-            d = {}
-            index = 0
-            for arg in args:
-                d[l[index]] = arg
-                index += 1
-                self.__dict__.update(d)
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.width = arg
+                    self.height = arg
+                if i == 2:
+                    self.x = arg
+                if i == 3:
+                    self.y = arg
         else:
-            kd = {}
-            for key, value in kwargs.items():
-                kd[key] = value
-                if key == "size":  # manually update value
-                    self.width = value
-                    self.height = value
-                self.__dict__.update(kd)
+            if 'id' in kwargs:
+                self.id = kwargs.get("id")
+            if 'size' in kwargs:
+                self.width = kwargs.get("size")
+                self.height = kwargs.get("size")
+            if 'x' in kwargs:
+                self.x = kwargs.get("x")
+            if 'y' in kwargs:
+                self.y = kwargs.get("y")
 
     def to_dictionary(self):
         """
