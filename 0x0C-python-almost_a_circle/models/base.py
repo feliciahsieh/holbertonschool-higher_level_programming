@@ -107,9 +107,7 @@ class Base:
             return []
 
         with open(fn, "r") as f:
-            d = {}
             jsonStr = f.read()
-
             jsonStr = cls.from_json_string(jsonStr)
 
             l = []
