@@ -37,15 +37,15 @@ tests directory
 ├── README.md
 ├── Rectangle.json
 └── tests
+    ├── __init__.py
     ├── __pycache__
     │   ├── testbase.cpython-34.pyc
     │   ├── testrectangle.cpython-34.pyc
     │   └── testsquare.cpython-34.pyc
     ├── README.md
-    ├── testbase.py
-    ├── testrectangle.py
-    └── testsquare.py
-
+    ├── test_base.py
+    ├── test_rectangle.py
+    └── test_square.py
 
 Run tests with
 >>>python3 -m unittest discover tests
