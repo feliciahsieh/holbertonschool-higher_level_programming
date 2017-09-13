@@ -83,14 +83,10 @@ class Base:
         Result:
             An instance with all attributes
         """
-        if len(dictionary) == 0 or dictionary is None:
-            return None
         if cls.__name__ == "Rectangle":
-            from models.rectangle import Rectangle
-            obj = Rectangle(1, 1)
+            obj = cls(1, 1)
         elif cls.__name == "Square":
-            from models.square import Square
-            obj = Square(1)
+            obj = cls(1)
 
         obj.update(**dictionary)
 
