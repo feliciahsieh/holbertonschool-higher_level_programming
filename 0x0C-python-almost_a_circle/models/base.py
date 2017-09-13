@@ -83,6 +83,8 @@ class Base:
         Result:
             An instance with all attributes
         """
+        if len(dictionary) == 0 or dictionary is None:
+            return None
         if cls.__name__ == "Rectangle":
             from models.rectangle import Rectangle
             obj = Rectangle(1, 1)
