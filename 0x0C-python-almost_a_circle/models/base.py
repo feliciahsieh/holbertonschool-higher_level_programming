@@ -107,11 +107,13 @@ class Base:
             return []
 
         with open(fn, "r") as f:
-            print("I opened a file")
             d = {}
+            jsonStr = f.read()
 
-            """
-            l = Rectangle.from_json_string(json_list_input)
-            from_json_string
-            obj.create
-            """
+            jsonStr = cls.from_json_string(jsonStr)
+
+            l = []
+            for dictionary in jsonStr:
+                obj = cls.create(**dictionary)
+                l.append(obj)
+            return l
