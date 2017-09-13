@@ -67,8 +67,7 @@ class Square(Rectangle):
                 if i == 0:
                     self.id = arg
                 if i == 1:
-                    self.width = arg
-                    self.height = arg
+                    self.size = arg
                 if i == 2:
                     self.x = arg
                 if i == 3:
@@ -77,8 +76,7 @@ class Square(Rectangle):
             if 'id' in kwargs:
                 self.id = kwargs.get("id")
             if 'size' in kwargs:
-                self.width = kwargs.get("size")
-                self.height = kwargs.get("size")
+                self.size = kwargs.get("size")
             if 'x' in kwargs:
                 self.x = kwargs.get("x")
             if 'y' in kwargs:
