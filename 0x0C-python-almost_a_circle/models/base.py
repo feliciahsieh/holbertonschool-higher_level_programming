@@ -57,7 +57,7 @@ class Base:
             l.append(obj.to_dictionary())
         s = Base.to_json_string(l)
         with open(str(cls.__name__) + ".json", "w") as f:
-            f.write(str(s))
+            f.write(s)
 
     @staticmethod
     def from_json_string(json_string):
