@@ -130,7 +130,7 @@ class Rectangle(Base):
         Return:
             None
         """
-        if len(args) > 0:
+        if len(args):
             for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg

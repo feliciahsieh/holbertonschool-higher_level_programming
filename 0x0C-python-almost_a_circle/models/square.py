@@ -62,7 +62,7 @@ class Square(Rectangle):
         Return:
             None
         """
-        if len(args) > 0:
+        if len(args):
             for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg
@@ -97,5 +97,4 @@ class Square(Rectangle):
         d["size"] = self.width
         d["x"] = self.x
         d["y"] = self.y
-
         return d
