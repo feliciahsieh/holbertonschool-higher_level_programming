@@ -95,12 +95,23 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
+        load_from_file - returns list of instances
+        Args:
+            None
+        Return:
+            list of instances
+        """
         fn = str(cls.__name__) + ".json"
         import os.path
         if not os.path.isfile(fn):
             return []
-        with open(fn, "r") as f:
-            from_json_string
 
+        with open(fn, "r") as f:
+            print("I opened a file")
+            d = {}
+
+            """
+            l = Rectangle.from_json_string(json_list_input)
+            from_json_string
             obj.create
-        """
+            """
