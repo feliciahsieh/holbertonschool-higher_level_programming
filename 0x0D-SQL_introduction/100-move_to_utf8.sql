@@ -1,18 +1,17 @@
 -- Convert hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci)
-
 -- For each database:
 ALTER DATABASE
     hbtn_0c_0
     CHARACTER SET = utf8
     COLLATE = utf8_unicode_ci;
 
-# For each table:
+-- For each table:
 ALTER TABLE
     first_table
     CONVERT TO CHARACTER SET utf8
     COLLATE utf8_unicode_ci;
 
-# For each column:
+-- For each column:
 ALTER TABLE
     first_table
     CHANGE name name
