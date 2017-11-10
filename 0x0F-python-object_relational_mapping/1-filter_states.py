@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    file: 1-filter_states.py
+    1-filter_states.py
 """
 
 import MySQLdb
