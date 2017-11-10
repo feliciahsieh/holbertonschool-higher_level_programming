@@ -1,14 +1,38 @@
 #!/usr/bin/python3
 """
-    define 0-select_states.py
+    file: 0-select_states.py
 """
 import MySQLdb
-import sqlalchemy
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format("root", "root", "hbtn_0e_0_usa"))
-Base.metadata.create_all(engine)
+class MyStates:
+        """
+        mysql table states
+        """
 
-session = Session(engine)
-for state in session.query(states).all():
-    print("{}: {}".format(state.id, state.name))
-session.close()
+        def printStates(*arg):
+                """
+                Display all states in mySQL table, states
+                Args:
+                    args: arguments being passed in
+                """
+
+                db = MySQLdb.connect(
+                        host="localhost",
+                        port=3306,
+                        user=arg[1],
+                        passwd=arg[2],
+                        db=arg[3])
+                cur = db.cursor()
+
+                cur.execute("SELECT * FROM states ORDER BY id ASC")
+                rows = cur.fetchall()
+                for row in rows:
+                        print(row)
+
+                cur.close()
+                db.close()
+
+if __name__ == "__main__":
+    from sys import argv
+
+MyStates.printStates(*argv)
