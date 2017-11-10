@@ -9,19 +9,22 @@ if __name__ == "__main__":
     if len(argv) != 5:
         exit(0)
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3])
-    cur = db.cursor()
+    try:
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3])
+        cur = db.cursor()
 
-    t = argv[4]
-    cur.execute("SELECT * FROM states WHERE name=(%s) \
-ORDER BY id ASC", (t,))
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    db.close()
+        t = argv[4]
+        cur.execute("SELECT * FROM states WHERE name=(%s) \
+        ORDER BY id ASC", (t,))
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+        cur.close()
+        db.close()
+    except:
+        pass
