@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
         t = argv[4]
         cur.execute("SELECT * FROM states WHERE name=(%s) \
-        ORDER BY id ASC", (t,))
+        ORDER BY id ASC".format(t,))
         rows = cur.fetchall()
         for row in rows:
             print(row)
