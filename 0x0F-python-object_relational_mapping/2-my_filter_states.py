@@ -6,6 +6,9 @@ if __name__ == "__main__":
     from sys import argv
     import MySQLdb
 
+    if len(argv) != 5:
+        exit(0)
+
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
