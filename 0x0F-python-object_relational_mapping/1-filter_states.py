@@ -3,10 +3,11 @@
     file: 1-filter_states.py
 """
 
-if __name__ == "__main__":
-    import MySQLdb
-    from sys import argv
+import MySQLdb
+from sys import argv
 
+
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
