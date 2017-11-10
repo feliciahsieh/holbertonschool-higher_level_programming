@@ -4,6 +4,7 @@
 """
 import MySQLdb
 
+
 class MyStates:
         """
         mysql table states
@@ -25,7 +26,8 @@ class MyStates:
                 cur = db.cursor()
 
                 cur.execute(
-                        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+                        "SELECT * FROM states WHERE name LIKE 'N%' \
+ORDER BY id ASC")
                 rows = cur.fetchall()
                 for row in rows:
                         print(row)

@@ -4,6 +4,7 @@
 """
 import MySQLdb
 
+
 class MyStates:
         """
         mysql table states
