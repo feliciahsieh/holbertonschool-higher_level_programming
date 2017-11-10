@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    file: 2-my_filter_states.py
+    2-my_filter_states.py
 """
 
 if __name__ == "__main__":
@@ -15,9 +15,8 @@ if __name__ == "__main__":
                              user=argv[1], passwd=argv[2], db=argv[3])
         cur = db.cursor()
         cur.execute("SELECT * FROM states WHERE name='{}' \
-ORDER BY id ASC".format(argv[4]))
-        rows = cur.fetchall()
-        for row in rows:
+        ORDER BY id ASC".format((argv[4],)))
+        for row in cur.fetchall():
             print(row)
         cur.close()
         db.close()
