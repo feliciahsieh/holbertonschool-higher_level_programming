@@ -13,16 +13,16 @@ if __name__ == "__main__":
     Base = declarative_base()
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]))
-    #Metadata needed for multiple tables
+    # Metadata needed for multiple tables
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    #select states.name, cities.id, cities.name from cities
-    #join states on cities.state_id=states.id;
+    # select states.name, cities.id, cities.name from cities
+    # join states on cities.state_id=states.id;
 
-    rows = session.query(City, State).filter(City.state_id==State.id).\
+    rows = session.query(City, State).filter(City.state_id == State.id).\
         order_by(City.id).all()
 
     for c, s in rows:
