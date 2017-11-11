@@ -16,6 +16,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).filter(
-            State.name.contains(sys.argv[4])).order_by(State.id):
-        print("{}".format(instance.id))
+    newState = State(name='Louisiana')
+    session.add(newState)
+
+    session.commit()
+
+    myState = session.query(State).filter_by(name='Louisiana').first()
+    print("{}".format(myState.id))
