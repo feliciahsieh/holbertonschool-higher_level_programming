@@ -19,4 +19,4 @@ if __name__ == "__main__":
     for i, instance in enumerate(session.query(State).
                                  filter(State.name.contains('a')).
                                  order_by(State.id)):
-        print("{}: {}".format(i, instance.name))
+        print("{}: {}".format(instance.id, instance.name))
