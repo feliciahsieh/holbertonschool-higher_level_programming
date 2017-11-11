@@ -17,11 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    exists = session.query(exists().where(
-        State.name.contains(sys.argv[4]))).scalar()
-    if (exists):
-        for instance in session.query(State).filter(
-                State.name.contains(sys.argv[4])).order_by(State.id):
-            print("{}".format(instance.id))
-    else:
+    st = session.query(State.id).filter_by(name=sys.argv[4]).first()
+    if st is None:
         print("Not found")
+    else:
+        print(st[0])
