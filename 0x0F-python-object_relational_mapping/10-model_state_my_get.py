@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import exists
 
 if __name__ == "__main__":
     Base = declarative_base()
@@ -16,10 +17,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    newState = State(name='Louisiana')
-    session.add(newState)
-
-    session.commit()
-
-    myState = session.query(State).filter_by(name='Louisiana').first()
-    print("{}".format(myState.id))
+    exists = session.query(exists().where(
+        State.name.contains(sys.argv[4]))).scalar()
+    if (exists):
+        for instance in session.query(State).filter(
+                State.name.contains(sys.argv[4])).order_by(State.id):
+            print("{}".format(instance.id))
+    else:
+        print("Not found")
