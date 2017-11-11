@@ -16,7 +16,10 @@ if __name__ == "__main__":
         sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    for i, instance in enumerate(session.query(State).\
-                                 filter(State.id==1).\
+
+    for i, instance in enumerate(session.query(State).
+                                 filter(State.id=1).
                                  order_by(State.id)):
-        print("{}: {}".format(i + 1, instance.name))
+        print("{}: {}".format(i, instance.name))
+        return
+    print("Nothing")
