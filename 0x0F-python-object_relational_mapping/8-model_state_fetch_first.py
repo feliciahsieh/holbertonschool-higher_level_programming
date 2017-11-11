@@ -17,9 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for i, instance in enumerate(session.query(State).
-                                 filter(State.id=1).
-                                 order_by(State.id)):
-        print("{}: {}".format(i, instance.name))
-        return
-    print("Nothing")
+    try:
+        a = session.query(State).first()
+        print("1: {}".format(a.name))
+    except:
+        print("Nothing")
