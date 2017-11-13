@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """
 model_city.py to create a City object that inherits from Base
-links to the MySQL table cities
-class attribute id=auto-generated, unique integer, can’t be null, primary key
-class attribute name=string of 128 characters and can’t be null
-class attribute state_id=integer, can’t be null, foreign key to states.id
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
