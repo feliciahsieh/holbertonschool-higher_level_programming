@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a request to a URL and display size fo the response body
-curl -sG $1
+# Send a GET request to URL and display body of the response
+curl -sw "%{http_code}" 0.0.0.0:5000/route_1
