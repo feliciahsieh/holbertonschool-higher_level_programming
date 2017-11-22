@@ -1,2 +1,2 @@
 # Comment
-O(n)
+O(log(n))
