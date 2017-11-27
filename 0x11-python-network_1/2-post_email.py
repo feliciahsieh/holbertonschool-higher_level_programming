@@ -14,10 +14,4 @@ if __name__ == "__main__":
     req = urllib.request.Request(url, data)
     resp = urllib.request.urlopen(req)
     respData = resp.read()
-    print(respData)
-
-    #with urllib.request.urlopen(url) as response:
-    #     query_args = {'email': email}
-    #     params = parse.urlencode(query_args)
-    #     f = urllib.request.urlopen(url, params)
-    #    print("Your email is: {}".format(f.read()))
+    print("{}".format(respData.decode('ascii')))
