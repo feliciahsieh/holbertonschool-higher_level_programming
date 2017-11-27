@@ -1,5 +1,4 @@
-#!/usr/bin/python3                                                              
-                                                        
+#!/usr/bin/python3
 """ 3-error_code.py """
 if __name__ == "__main__":
     """ __main__ """
