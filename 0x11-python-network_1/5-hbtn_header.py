@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-""" 1-hbtn_header.py """
+""" 5-hbtn_header.py """
 if __name__ == "__main__":
     """ __main__ """
     import sys
-    import urllib.request
+    import requests
 
     url = sys.argv[1]
-    with urllib.request.urlopen(url) as response:
-        headers = response.info()
-        print("{}".format(headers['X-Request-Id']))
+    r = requests.get(url)
+    print("{}".format(r.headers['X-Request-Id']))
