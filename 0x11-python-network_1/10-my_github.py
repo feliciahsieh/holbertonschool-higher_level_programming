@@ -8,14 +8,17 @@ if __name__ == "__main__":
 
     url = 'https://api.github.com/users/'
     r = ""
-    if len(sys.argv) == 3:
-        username = sys.argv[1]
-        passw = sys.argv[2]
-        url = url + username
-        r = requests.get(url, auth=HTTPBasicAuth(username, passw))
-    else:
-        print("None")
-        sys.exit(0)
+    try:
+        if len(sys.argv) == 3:
+            username = sys.argv[1]
+            passw = sys.argv[2]
+            url = url + username
+            r = requests.get(url, auth=HTTPBasicAuth(username, passw))
+        else:
+            print("None")
+            sys.exit(0)
 
-    d = r.json()
-    print(d['id'])
+        d = r.json()
+        print(d['id'])
+    except:
+        print("None")
