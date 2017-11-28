@@ -14,7 +14,7 @@ if __name__ == "__main__":
         url = url + username
         r = requests.get(url, auth=HTTPBasicAuth(username, passw))
     else:
-        print("Try again")
+        print("None")
         sys.exit(0)
 
     d = r.json()
