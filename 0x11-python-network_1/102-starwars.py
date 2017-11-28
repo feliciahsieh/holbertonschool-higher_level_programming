@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" 102-starwars.py """
+""" 102-starwars.py Queries Star Trek database with user string and
+prints out character name and movie listing of appearances """
 if __name__ == "__main__":
     """ __main__ """
     import sys
