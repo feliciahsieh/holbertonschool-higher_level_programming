@@ -7,5 +7,8 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 2:
         url = sys.argv[1]
-        r = requests.get(url)
-        print("{}".format(r.headers['X-Request-Id']))
+        try:
+            r = requests.get(url)
+            print("{}".format(r.headers['X-Request-Id']))
+        except:
+            sys.exit(0)
