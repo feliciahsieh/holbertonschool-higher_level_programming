@@ -6,7 +6,7 @@ if (args.length < 2) {
   let largest = args[0];
   let nextLargest = 0;
   for (let j = 1; j < args.length; j++) {
-    if (args[j] > largest) {
+    if (args[j] >= largest) {
       nextLargest = largest;
       largest = args[j];
     }
