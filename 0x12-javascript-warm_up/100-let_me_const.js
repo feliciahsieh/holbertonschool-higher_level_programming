@@ -1,5 +1,5 @@
 #!/usr/bin/node
-var q = function (a) {};
+var q = function () {};
 
 q.prototype.log = function () {
   console.log('333');
