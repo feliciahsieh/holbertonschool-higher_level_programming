@@ -13,4 +13,6 @@ function factorial (a) {
 let args = process.argv.slice(2);
 if (+args[0]) {
   console.log(factorial(+args[0]));
+} else {
+  console.log('1');
 }
