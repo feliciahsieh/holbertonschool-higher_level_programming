@@ -10,6 +10,7 @@ if (args.length < 2) {
   } else {
     nextLargest = args[0];
   }
+  console.log(nextLargest);
 } else {
   for (let j = 1; j < args.length; j++) {
     if (args[j] > largest) {
