@@ -30,9 +30,11 @@ This repository contains projects on Python programming lanugage. The projects w
 
 ## Requirements
 * Ubuntu 14.04 LTS
-* python3
-* pip3
+* python3 3.4.3
+* mysql  Ver 14.14 Distrib 5.7.20, for Linux (x86_64) using  EditLine wrapper
+* pip3 (1.5.4 from /usr/lib/python3/dist-packages (python 3.4))
 * requests module
+* nodejs
 * pep8 / pycodestyle styling
 * semistandard styling
 
