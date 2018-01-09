@@ -1,6 +1,4 @@
 #!/usr/bin/node
-
-Rectangle = class Rectangle {
-  constructor() {
-  }
+const Rectangle = class Rectangle {
 }
+module.exports = Rectangle
