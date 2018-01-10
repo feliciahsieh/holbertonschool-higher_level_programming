@@ -22,6 +22,7 @@ request(url, function (error, response, body) {
       request(element2, function (error2, response2, body2) {
         if (error2) { // Handle error if one occurred
         }
+
         if (response2.statusCode === 200) {
 	  let obj2 = JSON.parse(body2);
 	  console.log(obj2['name']);
