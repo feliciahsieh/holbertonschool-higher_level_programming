@@ -7,7 +7,7 @@ if (args[0] === undefined) {
   process.exit();
 }
 
-args[1] += '\n';
+// args[1] += '\n';
 let fs = require('fs');
 fs.writeFile(args[0], args[1], 'utf8', function (err) {
   if (err) {
