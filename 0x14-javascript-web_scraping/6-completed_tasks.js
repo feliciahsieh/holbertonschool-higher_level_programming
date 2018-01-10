@@ -2,7 +2,7 @@
 
 let args = process.argv.slice(2);
 if (args[0] === undefined) {
-  console.log('No argument');
+  process.exit();
 } else if (args.length !== 1) {
   process.exit();
 }
