@@ -9,7 +9,8 @@ if (args[0] === undefined) {
 let fs = require('fs');
 fs.readFile(args[0], 'utf8', function read (err, data) {
   if (err) {
-    throw err;
+    console.log(err);
+  } else {
+    console.log(data);
   }
-  console.log(data);
 });
