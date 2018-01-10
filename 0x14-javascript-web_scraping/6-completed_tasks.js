@@ -18,11 +18,11 @@ request(url, function (error, response, body) {
     let d = {};
     obj.forEach(function (element) {
       if (element['completed']) {
-	if (d[element['userId']] === undefined) {
+        if (d[element['userId']] === undefined) {
           d[element['userId']] = 1;
-	} else {
+        } else {
           d[element['userId']]++;
-	}
+        }
       }
     });
     console.log(d);
