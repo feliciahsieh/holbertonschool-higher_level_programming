@@ -1,10 +1,8 @@
 #!/usr/bin/node
 
-require('./100-data');
 let count = 0;
 
-//let list = [1, 2, 3, 4, 5];
-const l1 = list;
+const { list } = require('./100-data');
 console.log(list);
 
 function multFactor (num) {
