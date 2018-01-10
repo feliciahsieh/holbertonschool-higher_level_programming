@@ -17,10 +17,12 @@ request(url, function (error, response, body) {
     let obj = JSON.parse(body);
     let d = {};
     obj.forEach(function (element) {
-      if (d[element['userId']] === undefined) {
-        d[element['userId']] = 1;
-      } else {
-        d[element['userId']]++;
+      if (element['completed']) {
+	if (d[element['userId']] === undefined) {
+          d[element['userId']] = 1;
+	} else {
+          d[element['userId']]++;
+	}
       }
     });
     console.log(d);
