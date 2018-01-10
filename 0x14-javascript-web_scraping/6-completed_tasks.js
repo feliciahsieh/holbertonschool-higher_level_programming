@@ -16,9 +16,7 @@ request(url, function (error, response, body) {
   if (response.statusCode === 200) {
     let obj = JSON.parse(body);
     let d = {};
-    console.log(body);
     obj.forEach(function (element) {
-      console.log('element:' + element['id'] + 'd[uid]:"' + d[element['userId']]);
       if (d[element['userId']] === undefined) {
         d[element['userId']] = 1;
       } else {
