@@ -27,6 +27,7 @@ request(url, function (error, response, body) {
       for (let j = 0; j < obj['results'][i]['characters'].length; j++) {
         if (obj['results'][i]['characters'][j] === IdWedge) {
           count++;
+          break;
         }
       }
     }
