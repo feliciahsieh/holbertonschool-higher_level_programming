@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+const request = require('request');
 let args = process.argv.slice(2);
 if (args[0] === undefined) {
   console.log('Error');
@@ -11,7 +11,6 @@ if (args[0] === undefined) {
 
 let url = args[0];
 let IdWedge = 'https://swapi.co/api/people/18/';
-let request = require('request');
 request(url, function (error, response, body) {
   if (error) { // Handle error if one occurred
     console.log(error);
