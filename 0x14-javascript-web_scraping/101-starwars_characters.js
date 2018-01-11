@@ -11,6 +11,7 @@ if (args[0] === undefined) { // No user argument
 
 let base = 'http://swapi.co/api/films/' + args[0];
 
+var request = require('request');
 var request = require('sync-request');
 
 try {
