@@ -18,13 +18,13 @@ request(url, function (error, response, body) {
   }
   if (response.statusCode === 200) {
     let count = 0;
-    let obj = JSON.parse(body);
+    let films = JSON.parse(body).results;
 
     // For every movie
-    for (let i = 0; i < obj['results'].length; i++) {
+    for (let i = 0; i < films.length; i++) {
       // For every character
-      for (let j = 0; j < obj['results'][i]['characters'].length; j++) {
-        if (obj['results'][i]['characters'][j] === IdWedge) {
+      for (let j = 0; j < films[i].characters.length; j++) {
+        if (films[i].characters[j] === IdWedge) {
           count++;
           break;
         }
