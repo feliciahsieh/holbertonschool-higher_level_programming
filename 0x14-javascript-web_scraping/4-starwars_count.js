@@ -2,7 +2,7 @@
 
 let args = process.argv.slice(2);
 if (args[0] === undefined) {
-  console.log('No argument');
+  process.exit();
 } else if (args.length !== 1) {
   process.exit();
 }
@@ -19,7 +19,6 @@ request(url, function (error, response, body) {
 
     for (let i = 0; i < obj['results'].length; i++) {
       for (let j = 0; j < obj['results'][i]['characters'].length; j++) {
-        console.log('J:' + j + '  CHAR:' + obj['results'][i]['characters']);
         if (obj['results'][i]['characters'][j] === IdWedge) {
           count++;
         }
