@@ -10,7 +10,7 @@ if (args[0] === undefined) {
 }
 
 let url = args[0];
-let IdWedge = 'https://swapi.co/api/people/18/';
+// let IdWedge = 'https://swapi.co/api/people/18/';
 request(url, function (error, response, body) {
   if (error) { // Handle error if one occurred
     console.log(error);
@@ -24,7 +24,7 @@ request(url, function (error, response, body) {
     for (let i = 0; i < films.length; i++) {
       // For every character
       for (let j = 0; j < films[i].characters.length; j++) {
-        if (films[i].characters[j] === IdWedge) {
+        if (films[i].characters[j].endsWith('18/')) {
           count++;
           break;
         }
