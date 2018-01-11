@@ -7,19 +7,26 @@ if (args[0] === undefined) {
   process.exit();
 }
 
-let IDWedgeAntilles = 18;
-let urlbase = 'http://swapi.co/api/' + 'people/' + IDWedgeAntilles;
+let url = args[0];
+let IdWedge = 'https://swapi.co/api/people/18/';
 let request = require('request');
-
-request(urlbase, function (error, response, body) {
-  if (error) {
-    // Handle error if one occurred
+request(url, function (error, response, body) {
+  if (error) { // Handle error if one occurred
   }
-  // console.log('code:', response && response.statusCode); // Print response status code if a response was received
   if (response.statusCode === 200) {
+    let count = 0;
     let obj = JSON.parse(body);
-    console.log(obj['films'].length);
+
+    for (let i = 0; i < obj['results'].length; i++) {
+      for (let j = 0; j < obj['results'][i]['characters'].length; j++) {
+        console.log('J:' + j + '  CHAR:' + obj['results'][i]['characters']);
+        if (obj['results'][i]['characters'][j] === IdWedge) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
   } else {
-    console.log('HTTP err:' + response.statusCode);
+    console.log(response.statusCode);
   }
 });
