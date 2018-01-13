@@ -1,3 +1,5 @@
 $(document).ready(function () {
-  $('#red_header').addClass('red');
+  $('#red_header').click(function () {
+    $('header').addClass('red');
+  });
 });
