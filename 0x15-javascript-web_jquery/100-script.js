@@ -1,3 +1,3 @@
-document.querySelector('header').onload(function () {
-  $(this).style.color = 'red';
-});
+window.onload = function() {
+  document.querySelector('header').style.color = 'red';
+};
