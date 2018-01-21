@@ -4,14 +4,19 @@ To test the code, here are the steps to test it with the script file in a Vagran
 
 0. If you haven't already enabled sharing of a local ip from your vagrant vm to your host, remove the `#` from the line of your Vagrantfile that says `config.vm.network "private_network", ip: "192.168.33.10"`. This allows you to access your vm through that ip address.
 1. If you don't have docker installed on your vagrant vm, install it with
+
 `sudo apt-get install -y docker.io`
+
 2. Enter the following on the command line:
+
 `sudo docker run -d -it --name nginxtest -v "$(pwd)":/usr/share/nginx/html:ro -p 8080:80 nginx:latest`.
+
 This will install a docker image running nginx on port 80 and expose it to port 8080 on your vagrant vm. It also maps whatever directory you're working in to `/usr/share/nginx/html` on the docker image, which means that instead of loading whatever is normally there, nginx will look in your current directory for a file named `index.html`.
 3. While working on the assignments you can just keep a symlink to whatever html file you're currently using called `index.html` and presto nginx will serve it for you.
 4. Go to `192.168.33.10:8080` in your web browser and you should be able to see the web page served by nginx with the desired script linked through the `src` attribute of whatever `<script>` element is being used.
 5. Create a soft link everytime you test a new html file.
-` ln -sf [taskNumber]-main.html index.html`
+
+`ln -sf [taskNumber]-main.html index.html`
 
 <h4 class="task">
     0. No jQuery
