@@ -9,7 +9,7 @@ To test the code, here are the steps to test it with the script file in a Vagran
 
 2. Enter the following on the command line:
 
-`sudo docker run -d -it --name nginxtest -v "$(pwd)":/usr/share/nginx/html:ro -p 8080:80 nginx:latest`.
+`sudo docker run -d -it --name nginxtest -v "$(pwd)":/usr/share/nginx/html:ro -p 8080:80 nginx:latest`
 
 This will install a docker image running nginx on port 80 and expose it to port 8080 on your vagrant vm. It also maps whatever directory you're working in to `/usr/share/nginx/html` on the docker image, which means that instead of loading whatever is normally there, nginx will look in your current directory for a file named `index.html`.
 
@@ -21,7 +21,7 @@ This will install a docker image running nginx on port 80 and expose it to port 
 
 `ln -sf [taskNumber]-main.html index.html`
 
-6. If Docker complains about an existing container if you ran the container earlier, remove the container with
+6. If Docker complains about an existing container if you ran the container earlier, remove the container with the following commands and try again.
 ```
 sudo docker ps -a (to view the Docker ID)
 sudo docker -rm [containerName]
