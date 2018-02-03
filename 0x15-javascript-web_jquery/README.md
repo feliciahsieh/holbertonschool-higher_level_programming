@@ -21,6 +21,12 @@ This will install a docker image running nginx on port 80 and expose it to port 
 
 `ln -sf [taskNumber]-main.html index.html`
 
+6. If Docker complains about an existing container if you ran the container earlier, remove the container with
+```
+sudo docker ps -a (to view the Docker ID)
+sudo docker -rm [containerName]
+```
+
 <h4 class="task">
     0. No jQuery
       <span class="alert alert-warning mandatory-optional">
