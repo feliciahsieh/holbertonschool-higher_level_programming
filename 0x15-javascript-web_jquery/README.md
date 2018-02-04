@@ -24,7 +24,7 @@ This will install a docker image running nginx on port 80 and expose it to port 
 6. If Docker complains about an existing container if you ran the container earlier, remove the container with the following commands and try again.
 ```
 sudo docker ps -a (to view the Docker ID)
-sudo docker -rm [containerName]
+sudo docker rm [containerName]
 ```
 
 <h4 class="task">
