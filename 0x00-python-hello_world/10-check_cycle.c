@@ -11,36 +11,25 @@ int check_cycle(listint_t *list)
 	const listint_t *temp = NULL, *itemCheck = NULL;
 
 
-	itemCheck = itemCheck;
-	temp = temp;
-
 	if (list == NULL)
-		return (0); /*no list item*/
-
+		return (0);
 	if (list->next == NULL)
-		return (0); /*list of one item*/
-
+		return (0);
 	if (list == list->next)
-		return (1); /*list of one item pointing to itself*/
-
+		return (1);
 	temp = list;
-
 	while (temp != NULL)
 	{
 		itemCheck = temp->next;
-
 		while (itemCheck != NULL)
 		{
 			if (temp == itemCheck)
 				return (1);
 			itemCheck = itemCheck->next;
 		}
-
 		temp = temp->next;
-		/*reset next item*/
-		if (temp == NULL) /*new temp*/
+		if (temp == NULL)
 			itemCheck = NULL;
 	}
-
 	return (0);
 }
