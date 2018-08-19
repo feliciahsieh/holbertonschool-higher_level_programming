@@ -8,6 +8,6 @@ $(document).ready(function() {
   });
 
   $('#clear_list').click(function () {
-    $('.my_list').remove();
+    $('.my_list').empty();
   });
 });
