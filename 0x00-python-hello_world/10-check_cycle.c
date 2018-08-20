@@ -8,28 +8,21 @@
  */
 int check_cycle(listint_t *list)
 {
-	const listint_t *temp = NULL, *itemCheck = NULL;
+	const listint_t *tortoise = NULL, *hare = NULL;
 
 
 	if (list == NULL)
 		return (0);
-	if (list->next == NULL)
-		return (0);
-	if (list == list->next)
-		return (1);
-	temp = list;
-	while (temp != NULL)
+
+	tortoise = list;
+	hare = list;
+
+	while (tortoise && hare && hare->next)
 	{
-		itemCheck = temp->next;
-		while (itemCheck != NULL)
-		{
-			if (temp == itemCheck)
-				return (1);
-			itemCheck = itemCheck->next;
-		}
-		temp = temp->next;
-		if (temp == NULL)
-			itemCheck = NULL;
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
+			return (1);
 	}
 	return (0);
 }
