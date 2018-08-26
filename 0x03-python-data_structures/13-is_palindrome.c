@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -13,7 +12,7 @@ int is_palindrome(listint_t **head)
 	int word[1000], i = 0;
 	int left = 0, right = 0;
 
-	if (*head == NULL)
+	if ((head == NULL) || (*head == NULL) || ((*head)->next == NULL))
 		return (1);
 	current = *head;
 	while (current)
@@ -22,8 +21,6 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		i++;
 	}
-	if (i == 1)
-		return (1);
 	left = i / 2 - 1;
 	if ((i % 2) == 0)
 		right = i / 2;
