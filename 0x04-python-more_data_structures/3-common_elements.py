@@ -2,8 +2,4 @@
 
 
 def common_elements(set_1, set_2):
-    a = []
-    for x in set_1:
-        if x in set_2:
-            a.append(x)
-    return a
+    return set(set_1).intersection(set_2)
