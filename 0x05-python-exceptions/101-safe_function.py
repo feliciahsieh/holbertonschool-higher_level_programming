@@ -3,12 +3,10 @@ import sys
 
 
 def safe_function(fct, *args):
-    result = None
     try:
+        result = None
         result = fct(*args)
-    except ZeroDivisionError:
-        sys.stderr.write("Exception: division by zero\n")
-    except IndexError:
-        sys.stderr.write("Exception: list index out of range\n")
+    except Exception as e:
+        sys.stderr.write("Exception: {}\n".format(str(e)))
     finally:
         return result
