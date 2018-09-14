@@ -18,5 +18,4 @@ class Square:
         dict (dict): dictionary in a Square class
 
         """
-        self.__dict__ = {}
         self.__size = size
