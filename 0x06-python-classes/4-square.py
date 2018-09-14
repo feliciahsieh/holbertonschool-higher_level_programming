@@ -33,12 +33,12 @@ class Square:
         """
         return self.__size ** 2
 
-    @property
+    @property # Decorator for Getter
     def size(self):
         """ Getter for size """
         return self.__size
 
-    @size.setter
+    @size.setter # Decorator for Setter
     def size(self, value=0):
         """ Setter for size """
         if type(value) != int:
