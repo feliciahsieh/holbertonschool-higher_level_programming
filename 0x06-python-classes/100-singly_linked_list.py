@@ -37,19 +37,13 @@ class SinglyLinkedList:
     def __init__(self):
         self.__head = None
 
-    def printNode(self):
-        print("printNode:", end="")
-        curr = self.__head
-        while curr:
-            print(curr.data)
-            curr = curr.next_node
-
     def __str__(self):
         t = ""
         curr = self.__head
         while curr != None:
-            t = t + str(curr.data) + " "
+            t = t + str(curr.data) + "\n"
             curr = curr.next_node
+        t = t[:-1]
         return t
 
     def sorted_insert(self, value):
