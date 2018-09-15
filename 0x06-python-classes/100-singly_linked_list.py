@@ -1,80 +1,76 @@
 #!/usr/bin/python3
+
+
 class Node:
-    """Initialze Node class instance of singly-linked list
-    Args:
-        data (int): content of node
-        next_node (Node): link to next node or None
-    """
-    def __init__(self, data=0, next_node=None):
-        __data = n
-        __next_node = None
-        if type(data) == int:
+    def __init__(self, data, next_node=None):
+        if isinstance(data, int):
             self.__data = data
+            if next_node == None or isinstance(next_node, Node):
+                self.__next_node = next_node
+            else:
+                raise TypeError("next_node must be a Node object")
         else:
             raise TypeError("data must be an integer")
 
-        if value is None or type(value) == type(Node):
-            self.__next_node = next_node
-            raise TypeError("next_node must be a Node object")
 
-    """ Getter for node content """
     @property
     def data(self):
         return self.__data
-
-    """ Setter for node content """
-    @data.setter
-    def data(self, value):
-        if type(value) == int:
-            self.__data = value
-        else:
-            raise TypeError("data must be an integer")
-
-    """ Getter for next node link """
     @property
     def next_node(self):
         return self.__next_node
 
-    """ Setter for next node link """
+    @data.setter
+    def data(self, value):
+        if isinstance(value, int):
+            self.__data = value
+        else:
+            raise TypeError("data must be an integer")
     @next_node.setter
     def next_node(self, value):
-        if value is None or type(value) == type(Node):
-            raise TypeError("next_node must be a Node object")
-        else:
+        if value == None or isinstance(value, Node):
             self.__next_node = value
-
+        else:
+            raise TypeError("next_node must be a Node object")
 
 class SinglyLinkedList:
-    """ Initialize Singly Linked List
-    Args:
-        data (int): content of node
-        next_node (Node): link to next node or None
-    """
     def __init__(self):
-        self.__head
-        self.next_node = None
+        self.__head = None
+
+    def printNode(self):
+        print("printNode:", end="")
+        curr = self.__head
+        while curr:
+            print(curr.data)
+            curr = curr.next_node
 
     def __str__(self):
+        t = ""
         curr = self.__head
-        while (curr is not None):
-            print(curr.__head.data)
-            curr = curr->next_node
+        while curr != None:
+            t = t + str(curr.data) + " "
+            curr = curr.next_node
+        return t
 
     def sorted_insert(self, value):
         n = Node(value)
 
-        # FIRST node in list
+        # Very First node
         if self.__head is None:
             self.__head = n
-
-        # First NEW node in list
-        if n.data <= self.__head.data:
-            n.next_node = self.__head
-            self.__head = n
+            return
 
         curr = self.__head
-        # Find place after to be inserted
-        while curr.next_node is not None and n.data < self.__head.data:
+
+        # New First node
+        if n.data <= curr.data:
+            n.next_node = self.__head
+            self.__head = n
+            return
+
+        # Multiple nodes
+        while curr.next_node is not None and curr.next_node.data < n.data:
             curr = curr.next_node
+
         n.next_node = curr.next_node
         curr.next_node = n
