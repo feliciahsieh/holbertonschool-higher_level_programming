@@ -107,7 +107,6 @@ class Square:
         else:
             return("")
 
-
     def __repr__(self):
         """ Prints a square made up of #'s
         Args:
