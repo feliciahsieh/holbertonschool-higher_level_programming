@@ -94,11 +94,23 @@ class Square:
         Args:
             None
         """
-        self.my_print()
+        a = ""
+        if self.__size != 0:
+            a = '\n' * self.__position[1]
+            for i in range(self.__size):
+                a = a + ' ' * self.__position[0]
+                a = a + '#' * self.__size
+                if i < self.__size - 1:
+                    a = a + '\n'
+            return(a)
+
+        else:
+            return("")
+
 
     def __repr__(self):
         """ Prints a square made up of #'s
         Args:
             None
         """
-        self.my_print()
+        return self.__str__()
