@@ -5,9 +5,6 @@
 
 
 def matrix_mul(m_a, m_b):
-    print("m_a:{}".format(m_a))
-    print("m_b:{}".format(m_b))
-
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
     if type(m_b) is not list:
