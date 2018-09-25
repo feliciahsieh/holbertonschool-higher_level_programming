@@ -13,7 +13,7 @@ def text_indentation(text):
     Args:
     text (str): string of text to format
     """
-    if text is None:
+    if text is None or len(text) == 0:
         raise TypeError("text must be a string")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
