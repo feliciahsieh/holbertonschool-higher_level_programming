@@ -5,6 +5,14 @@
 
 
 def matrix_mul(m_a, m_b):
+    """
+    Multiplies two matrices together
+
+    Args:
+        m_a (list): matrix of numbers
+        m_b (list): matrix of numbers
+    """
+
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
     if type(m_b) is not list:
