@@ -50,15 +50,13 @@ def matrix_mul(m_a, m_b):
             raise TypeError("each row of m_b must should be of the same size")
 
     result = [[0 for i in range(len(m_b))] for j in range(len(m_a))]
-    try:
-        # iterate through rows of X
-        for i in range(len(m_a)):
-            # iterate through columns of Y
-            for j in range(len(m_b[0])):
-                # iterate through rows of Y
-                for k in range(len(m_b)):
-                    result[i][j] += m_a[i][k] * m_b[k][j]
-    except Exception as e:
-        print("{}".format(e))
+
+    # iterate through rows of X
+    for i in range(len(m_a)):
+        # iterate through columns of Y
+        for j in range(len(m_b[0])):
+            # iterate through rows of Y
+            for k in range(len(m_b)):
+                result[i][j] += m_a[i][k] * m_b[k][j]
 
     return result
