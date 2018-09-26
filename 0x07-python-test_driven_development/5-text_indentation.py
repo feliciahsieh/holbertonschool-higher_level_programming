@@ -8,26 +8,26 @@
 def text_indentation(text):
     """
     print 2 newlines instead of every period,
-    question mark, or colon character.
-
+        question mark, or colon character.
     Args:
-    text (str): string of text to format
+        text (str): string of text to format
     """
-    if text is None or len(text) == 0:
-        raise TypeError("text must be a string")
-    if not isinstance(text, str):
+    if text is None:
+        raise TypeError("missing 1 required positional argument")
+    if type(text) is not str:
         raise TypeError("text must be a string")
     isSkip = False
     for i in text:
-        if isSkip is False:
-            if i == '.' or i == '?' or i == ':':
-                print(i, '\n' * 2, end="", sep="")
-                isSkip = True
-            else:
-                print(i, end="", sep="")
+        if i == '.' or i == '?' or i == ':':
+            print(i, '\n' * 2, end="", sep="")
+            isSkip = True
         else:
-            if i == ' ':
+            if i == ' ' and isSkip:
                 continue
             else:
-                print(i, end="")
+                print(i, end="", sep="")
                 isSkip = False
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
