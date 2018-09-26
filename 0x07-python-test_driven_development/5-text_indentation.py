@@ -16,15 +16,16 @@ def text_indentation(text):
         raise TypeError("missing 1 required positional argument")
     if type(text) is not str:
         raise TypeError("text must be a string")
+
+    text = text.lstrip()
+
     isSkip = False
-    isStart = True
     for i in text:
         if i == '.' or i == '?' or i == ':':
             print(i, '\n' * 2, end="", sep="")
             isSkip = True
         else:
-            if i == ' ' and (isSkip or isStart):
-                isStart = False
+            if i == ' ' and isSkip:
                 continue
             else:
                 print(i, end="", sep="")
