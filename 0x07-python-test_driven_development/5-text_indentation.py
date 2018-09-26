@@ -12,12 +12,8 @@ def text_indentation(text):
     Args:
         text (str): string of text to format
     """
-    if text is None:
-        raise TypeError("missing 1 required positional argument")
-    if type(text) is not str:
+    if text is None or type(text) is not str:
         raise TypeError("text must be a string")
-
-    text = text.lstrip()
 
     isSkip = False
     for i in text:
