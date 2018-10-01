@@ -19,6 +19,5 @@ if n < 4:
 result = []
 for r in range(n):
     for c in range(n):
-        # result.append([r, c])
-
+        continue  # result.append([r, c])
 print(result)
