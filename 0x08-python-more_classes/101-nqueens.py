@@ -9,15 +9,15 @@ import sys
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     exit(1)
-n = int(sys.argv[1])
-if type(n) is not int:
+n = sys.argv[1]
+if "." in n or type(int(n)) is not int:
     print("N must be a number")
     exit(1)
-if n < 4:
+if int(n) < 4:
     print("N must be at least 4")
     exit(1)
 result = []
+n = int(n)
 for r in range(n):
     for c in range(n):
         continue  # result.append([r, c])
-print(result)
