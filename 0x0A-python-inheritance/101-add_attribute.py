@@ -11,7 +11,8 @@ def add_attribute(self, key, value):
         nothing
     """
     if type(self) is not int and type(self) is not float \
-       and type(self) is not str:
+       and type(self) is not str and type(self) is not dict \
+       and type(self) is not set and type(self) is not list:
         setattr(self, key, value)
     else:
         raise TypeError("can't add new attribute")
