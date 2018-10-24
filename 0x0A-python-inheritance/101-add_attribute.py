@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def add_attribute(self, key, value):
+def add_attribute(obj, attr, value):
     """
     add_attribute - add new attribute to object, else raise TypeError
     Args:
@@ -10,9 +10,6 @@ def add_attribute(self, key, value):
     Returns:
         nothing
     """
-    if type(self) is not int and type(self) is not float \
-       and type(self) is not str and type(self) is not dict \
-       and type(self) is not set and type(self) is not list:
-        setattr(self, key, value)
-    else:
+    if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
+    setattr(obj, attr, value)
