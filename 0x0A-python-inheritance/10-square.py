@@ -14,8 +14,6 @@ class Square(Rectangle):
     Return: None
     """
 
-    __size = 0
-
     def __init__(self, size):
         """
         __init__ - initialization of Square class
@@ -24,11 +22,12 @@ class Square(Rectangle):
         Return: None
         """
 
-        if type(size) is int \
-           and self.integer_validator("size", size) and size >= 0:
-            super().__init__(size, size)
-            self.__size = size
-
+        try:
+            if self.integer_validator("size", size) and size >= 0:
+                super().__init__(size, size)
+                self.__size = size
+        except Exception as e:
+            raise e.__class__(e)
 
     def area(self):
         """
