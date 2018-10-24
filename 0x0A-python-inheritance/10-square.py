@@ -24,9 +24,11 @@ class Square(Rectangle):
         Return: None
         """
 
-        if self.integer_validator("size", size) and size >= 0:
+        if type(size) is int \
+           and self.integer_validator("size", size) and size >= 0:
             super().__init__(size, size)
             self.__size = size
+
 
     def area(self):
         """
