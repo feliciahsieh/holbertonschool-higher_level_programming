@@ -24,8 +24,7 @@ class Square(Rectangle):
         Return: None
         """
 
-        if size > 0:
-            self.integer_validator("size", size)
+        if self.integer_validator("size", size) and size >= 0:
             super().__init__(size, size)
             self.__size = size
 
@@ -55,4 +54,5 @@ class Square(Rectangle):
             None
         Return: string describing area
         """
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return "[{}] {}/{}".format(self.__class__.__name__,
+                                   self.__size, self.__size)
