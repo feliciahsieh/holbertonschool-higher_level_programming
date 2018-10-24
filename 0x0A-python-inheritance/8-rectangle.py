@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
             None
         Return: None
         """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+        if self.integer_validator("width", width) and width >= 0:
+            self.__width = width
+        if self.integer_validator("height", height) and height >= 0:
+            self.__height = height
