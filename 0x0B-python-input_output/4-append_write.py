@@ -13,11 +13,8 @@ def append_write(filename="", text=""):
     Return
         the number of characters added:
     """
-    count = 0
-
     if type(filename) is not str or type(text) is not str:
         return 0
 
     with open(filename, mode="a", encoding="utf-8") as f:
-        count = f.write(text)
-        return count
+        return f.write(text)
