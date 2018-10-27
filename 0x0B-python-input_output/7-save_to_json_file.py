@@ -7,13 +7,13 @@ import json
 
 
 def save_to_json_file(my_obj, filename):
-    """
-    save_to_json_file - writes object to text file using a JSON representation
-    """
+    with open(filename, 'w+') as f:
+        pass
 
-    if type(filename) is not str or filename == "" or my_obj == []:
+    if type(filename) is not str:
         return 0
-    jsonStr = json.dumps(my_obj)
 
-    with open(filename, "w+") as f:
-        return f.write(jsonStr)
+    j = json.dumps(my_obj)
+
+    with open(filename, "w+") as file:
+        return file.write(j)
