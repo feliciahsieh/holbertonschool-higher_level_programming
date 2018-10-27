@@ -11,7 +11,7 @@ def save_to_json_file(my_obj, filename):
     save_to_json_file - writes object to text file using a JSON representation
     """
 
-    if type(filename) is not str or filename == "":
+    if type(filename) is not str or filename == "" or my_obj == []:
         return 0
     jsonStr = json.dumps(my_obj)
 
