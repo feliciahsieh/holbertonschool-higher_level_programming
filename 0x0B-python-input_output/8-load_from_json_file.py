@@ -18,7 +18,5 @@ def load_from_json_file(filename):
     if type(filename) is not str:
         return
 
-    with open(filename, mode="r") as f:
-        myObj = f.read()
-    x = json.loads(myObj)
-    return x
+    with open(filename, mode="r") as file:
+        return json.loads(file.read())
