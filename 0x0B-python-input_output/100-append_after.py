@@ -10,14 +10,16 @@ def append_after(filename="", search_string="", new_string=""):
     Return:
         None (Change file to reflect changes)
     """
-
+    contentsCopy = []
     with open(filename, "r") as f:
         contents = f.readlines()
 
         for i in range(len(contents)):
+            contentsCopy.append(contents[i])
             if search_string in contents[i]:
-                contents.insert(i + 1, new_string)
+                contentsCopy.append(new_string)
+                #contents.insert(i + 1, new_string)
 
     with open(filename, "w+") as f:
-        contents = "".join(contents)
-        f.write(contents)
+        c = "".join(contentsCopy)
+        f.write(c)
