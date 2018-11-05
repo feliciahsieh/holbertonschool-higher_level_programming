@@ -18,6 +18,6 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in contents[i]:
                 contents.insert(i + 1, new_string)
 
-    with open(filename, "w") as f:
+    with open(filename, "w+") as f:
         contents = "".join(contents)
         f.write(contents)
