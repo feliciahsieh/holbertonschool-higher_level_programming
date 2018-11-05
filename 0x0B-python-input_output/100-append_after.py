@@ -18,7 +18,6 @@ def append_after(filename="", search_string="", new_string=""):
             contentsCopy.append(contents[i])
             if search_string in contents[i]:
                 contentsCopy.append(new_string)
-                #contents.insert(i + 1, new_string)
 
     with open(filename, "w+") as f:
         c = "".join(contentsCopy)
