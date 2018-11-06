@@ -2,11 +2,11 @@
 
 To run python tests, use
 ```
-python3 -m doctest -v ./tests/testFibonacci.txt
+python3 -m doctest -v ./tests/myTests.txt
 ```
 or
 ```
-python3 -m doctest -v ./tests/testFibonacci.txt | tail -2
+python3 -m doctest -v ./tests/myTests.txt | tail -2
 ```
 
 <h4 class="task">
