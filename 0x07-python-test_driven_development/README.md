@@ -1,5 +1,13 @@
 <h1 class="gap">0x07. Python - Test-driven development</h1>
 
+To run python tests, use
+```
+python3 -m doctest -v ./tests/testFibonacci.txt
+```
+or
+```
+python3 -m doctest -v ./tests/testFibonacci.txt | tail -2
+```
 
 <h4 class="task">
     0. Integers addition
