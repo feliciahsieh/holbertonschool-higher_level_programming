@@ -50,7 +50,7 @@ class Base:
         Return:
             None
         """
-        l = []
+        # l = []
         if list_objs:
             for obj in list_objs:
                 l.append(obj.to_dictionary())
@@ -110,7 +110,7 @@ class Base:
             jsonStr = f.read()
             jsonStr = cls.from_json_string(jsonStr)
 
-            l = []
+            # l = []
             for dictionary in jsonStr:
                 obj = cls.create(**dictionary)
                 l.append(obj)
