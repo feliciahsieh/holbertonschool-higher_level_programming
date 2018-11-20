@@ -50,11 +50,11 @@ class Base:
         Return:
             None
         """
-        # l = []
+        myList = []
         if list_objs:
             for obj in list_objs:
-                l.append(obj.to_dictionary())
-        s = cls.to_json_string(l)
+                myList.append(obj.to_dictionary())
+        s = cls.to_json_string(myList)
 
         with open(str(cls.__name__) + ".json", "w") as f:
             f.write(s)
@@ -110,8 +110,8 @@ class Base:
             jsonStr = f.read()
             jsonStr = cls.from_json_string(jsonStr)
 
-            # l = []
+            myList = []
             for dictionary in jsonStr:
                 obj = cls.create(**dictionary)
-                l.append(obj)
-            return l
+                myList.append(obj)
+            return myList
