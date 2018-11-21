@@ -107,10 +107,14 @@ class Base:
             return []
 
         with open(fn, "r") as f:
+            # read file text as string
             jsonStr = f.read()
+
+            # convert to list of dictionaries
             jsonStr = cls.from_json_string(jsonStr)
 
             myList = []
+            # convert list of objects (with dictionary data)
             for dictionary in jsonStr:
                 obj = cls.create(**dictionary)
                 myList.append(obj)
