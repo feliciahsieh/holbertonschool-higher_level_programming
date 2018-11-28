@@ -119,3 +119,6 @@ class Base:
                 obj = cls.create(**dictionary)
                 myList.append(obj)
             return myList
+
+def draw(list_rectangles, list_squares):
+    pass
