@@ -1,55 +1,24 @@
 #!/usr/bin/python3
-"""
-Base class definition
-"""
 import json
 
 
 class Base:
-    """
-    Base class
-    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        __init__ - initialize Base object
-        Args
-            id(int) - initialize obj with ID or use autonumber as ID
-        Return:
-            None
-        """
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    @staticmethod
     def to_json_string(list_dictionaries):
-        """
-        to_json_string - return JSON string of list_dictionaries
-        Args:
-            list_dictionaries(list) - list of dictionaries items
-        Return:
-            JSON string of list_dictionaries
-        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        save_to_file - writes JSON string of list_objs to a file.
-        Convert (Rectangle|Square obj) -> dictionary -> string of dict -> file.
-        Args:
-            cls() - class type of list_objs. Used to derive <ClassName>.json
-            list_objs(list) - list of Base instances (Rectangle or Square)
-        Return:
-            None
-        """
         myList = []
         if list_objs:
             for obj in list_objs:
@@ -61,64 +30,103 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        from_json_string - returns the list of the JSON string
-        Args:
-            json_string(str) - string of list of dictionaries
-        Return:
-            Empty list if no JSON string or a list created from json_string
-        """
-        if json_string is None or json_string == "":
+        if json_string is None or len(json_string) == 0:
             return []
 
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        create - returns an instance with all attributes already set
-        Args:
-            cls (class) - class of method
-            dictionary(dict) - double pointer to a dictionary
-        Result:
-            An instance with all attributes
-        """
         if cls.__name__ == "Rectangle":
-            obj = cls(1, 1)
+            dummy = cls(1, 2)
         elif cls.__name__ == "Square":
-            obj = cls(1)
+            dummy = cls(1)
 
-        obj.update(**dictionary)
-
-        return(obj)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
-        """
-        load_from_file - returns list of instances
-        Args:
-            None
-        Return:
-            list of instances
-        """
-        fn = str(cls.__name__) + ".json"
-        import os.path
-        if not os.path.isfile(fn):
-            return []
-
-        with open(fn, "r") as f:
-            # read file text as string
-            jsonStr = f.read()
-
-            # convert to list of dictionaries
-            jsonStr = cls.from_json_string(jsonStr)
+        filename = cls.__name__ + ".json"
+        result = test = []
+        with open(filename, "r") as f:
+            text = f.read()
+            if len(text) == 0:
+                return []
 
             myList = []
-            # convert list of objects (with dictionary data)
-            for dictionary in jsonStr:
+            result = cls.from_json_string(text)
+            for dictionary in result:
                 obj = cls.create(**dictionary)
                 myList.append(obj)
-            return myList
+        return myList
 
-def draw(list_rectangles, list_squares):
-    pass
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        text = ""
+
+        # create string from list of objects
+        if list_objs:
+            filenameRect = cls.__name__ + ".csv"
+            filenameSq = cls.__name__ + ".csv"
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    with open(filenameRect, "a") as fRect:
+                        text = cls.__name__ + ": "
+                        text += str(obj.id) + ","
+                        text += str(obj.width) + "," + str(obj.height) + ","
+                        text += str(obj.x) + "," + str(obj.y) + "\n"
+
+                        # write to Rectangle.csv file
+                        fRect.write(text)
+                elif cls.__name__ == "Square":
+                    with open(filenameSq, "a") as fSq:
+                        text = cls.__name__ + ": "
+                        text += str(obj.id) + ","
+                        text += str(obj.width) + ","
+                        text += str(obj.x) + "," + str(obj.y) + "\n"
+
+                        # write to Square.csv file
+                        fSq.write(text)
+                # reset text string
+                text = ""
+
+    @classmethod
+    def load_from_file_csv(cls):
+        rectangleAttr = ["id", "width", "height", "x", "y"]
+        squareAttr = ["id", "size", "x", "y"]
+        filename = cls.__name__ + ".csv"
+
+        myList = []
+        r = []
+        text = ""
+        if filename == "Rectangle.csv":
+            with open(filename, "r") as f:
+                for line in f:
+                    line = line.strip("Rectangle: ")
+                    line = line.strip("\n")
+                    myList = line.split(",")
+                    d = {}
+
+                    for k, arg in zip(rectangleAttr, myList):
+                        d[k] = int(arg)
+
+                    obj = cls.create(**d)
+                    r.append(obj)
+                return r
+        elif filename == "Square.csv":
+            with open(filename, "r") as f:
+                for line in f:
+                    line = line.strip("Square: ")
+                    line = line.strip("\n")
+                    myList = line.split(",")
+
+                    d = {}
+                    for k, arg in zip(squareAttr, myList):
+                        d[k] = int(arg)
+                    obj = cls.create(**d)
+                    r.append(obj)
+                return r
+
+    def draw(list_rectangles, list_squares):
+        pass
