@@ -147,6 +147,7 @@ class Base:
                     r.append(obj)
                 return r
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """
         """
