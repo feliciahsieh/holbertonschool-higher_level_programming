@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 import json
-
+"""
+"""
 
 class Base:
+    """
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        """
         if id is not None:
             self.id = id
         else:
@@ -13,12 +18,16 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        """
         myList = []
         if list_objs:
             for obj in list_objs:
@@ -30,6 +39,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        """
         if json_string is None or len(json_string) == 0:
             return []
 
@@ -37,6 +48,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
         elif cls.__name__ == "Square":
@@ -47,6 +60,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        """
         filename = cls.__name__ + ".json"
         result = test = []
         with open(filename, "r") as f:
@@ -63,6 +78,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        """
         text = ""
 
         # create string from list of objects
@@ -93,6 +110,8 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        """
         rectangleAttr = ["id", "width", "height", "x", "y"]
         squareAttr = ["id", "size", "x", "y"]
         filename = cls.__name__ + ".csv"
@@ -129,4 +148,6 @@ class Base:
                 return r
 
     def draw(list_rectangles, list_squares):
+        """
+        """
         pass
