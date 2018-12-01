@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import json
 """ base.py """
+
+
+import json
 
 
 class Base:
@@ -84,7 +86,6 @@ class Base:
             for obj in list_objs:
                 if cls.__name__ == "Rectangle":
                     with open(filenameRect, "a") as fRect:
-                        text = cls.__name__ + ": "
                         text += str(obj.id) + ","
                         text += str(obj.width) + "," + str(obj.height) + ","
                         text += str(obj.x) + "," + str(obj.y) + "\n"
@@ -93,7 +94,6 @@ class Base:
                         fRect.write(text)
                 elif cls.__name__ == "Square":
                     with open(filenameSq, "a") as fSq:
-                        text = cls.__name__ + ": "
                         text += str(obj.id) + ","
                         text += str(obj.width) + ","
                         text += str(obj.x) + "," + str(obj.y) + "\n"
@@ -116,7 +116,6 @@ class Base:
         if filename == "Rectangle.csv":
             with open(filename, "r") as f:
                 for line in f:
-                    line = line.strip("Rectangle: ")
                     line = line.strip("\n")
                     myList = line.split(",")
                     d = {}
@@ -130,7 +129,6 @@ class Base:
         elif filename == "Square.csv":
             with open(filename, "r") as f:
                 for line in f:
-                    line = line.strip("Square: ")
                     line = line.strip("\n")
                     myList = line.split(",")
 
