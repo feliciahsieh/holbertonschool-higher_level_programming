@@ -3,7 +3,7 @@
 # Higher-level programming - Python
 
 ## Welcome
-Thanks for visiting my programming projects. It is written in Python
+Thanks for visiting my programming projects. Projects are written in Python, mySQL, and Javascript
 
 ## Table of Contents
 * [About](#about)
